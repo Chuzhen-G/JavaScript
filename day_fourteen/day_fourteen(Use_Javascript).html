@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <a href="javascript:alert('greet!')">hello</a>
+  <a href="javascript:let a=10, b=20;alert('result is:'+(a+b))">Yo</a>
+  <a href="javascript:close();">&times;</a>
+  <!-- The void at here is to evaluate the tags value and return undefine, so it blocked the default behavior for "a" tags, which in this case "a" tags will
+   not be able to jump to other place, and it is often when using at the link-->
+  <a href="javascript:void(1);">test</a>
+  <a href="">test</a>
+</body>
+<!-- normal(without async or defer), if put at the middle, the html will wait the script load fully, then script implement to elements, then run rest of html files. -->
+<!-- async(can using to execute the script async), which means javascript and the html loading at the same time, whenever javascript is ready, it will implement its
+ script, even if the html doesn't really yet, so the order is uncertain
+ Note:can only using for the external javascript -->
+<script src="test.js" type="text/javascript" async="async"></script>
+<!-- defer at here means after execute all the elements in the body and head
+ then start to execute this script, order is certain as html first then script -->
+ <script type="text/javascript" defer="defer" charset="utf-9">
+    // alert: to pop up a alert box;
+    // alert('This is my first javascript program');
+    // alert("aaaaaaaaaaaaaaaaaa")
+  </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+     /* 
+      Sequential of object
+      -The object in JS are store in the memory of computer
+      -Sequential means to convert object to a form that can be store
+        in JS the sequential of object is usually to convert an object to string
+      -Role of sequential(Why convert object to string)：
+        -after object convert to string, then we can transform these string in different language
+          even people can directly doing read and write operation to string, to make JS object transform in different language
+        -Where does it use:
+          1.using the format of data exchange
+          2.using to write setting file
+      -How to doing sequential:
+        -In js, there have a tool call JSON (JavaScript Objecct Notation)
+        -After JS object sequential to a string, we call those string JSON string
+      -We can code JSON string manually, in many program setting file are parse by JSON
+      -Notes when parse JSON:
+        1.There are two kinds for the JSON string:
+          JSON object{}
+          JSON array []
+        2.JSON string property name must using double quotation
+        3.The property value (elements) JSON can use
+          -Number(BigInt can't)
+          -String
+          -Boolean
+          -Null
+          -Object(normal object)
+          -Array
+        4.The format of JSON is very similar to the format of JS object
+          Note: If JS string is the last property, then don't adding comma at the end
+     */
+    const obj ={
+      name:'wukong',
+      age:18
+    }
+
+    //transform obj to JSON string
+    const str = JSON.stringify(obj)//JSON.stringify() to convert an object to JSON string
+    console.log(obj)
+    console.log(str)//{'name':'wukong', 'age':18}
+    const obj2 = JSON.parse(str) //JSON.parse() can change a JSON format string to a JSON object
+    const str2 ='{"name":"bajie","age":28}'
+    const str3 = '["hello",true,undefined, NaN]'
+    console.log(str2)
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn"> click me </button>
+  <form action="#">
+  <input type="text" name="username">
+  </form>
+  <script>
+
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click',()=>{
+      /* 
+        location is refer to the information of the browser address
+          -can directly change location value to a new address to cause web page jump
+          -location.assign() jump to a new address(without change original location)
+          -location.href(get current address)
+          -location.reload() reload current pages, parameter using true to enforce clear cache
+          -location.replace jump to a new address (can't going back through backward button)
+      */
+    //  modify website location will change it to the new location we assign
+      console.log(location.href)
+
+      // location = 'https://www.lilichao.com'
+      location.reload(true)//clear cache(true), each time when reload, the original typing in data will be clear
+      location.assign('https://www.lilichao.com')//same as directly give value, but not change the original location
+      location.replace('https://www.lilichao.com')//replace the original location by new location(can't going backward page)
+    })
+  </script>
+</body>
+
+</html>

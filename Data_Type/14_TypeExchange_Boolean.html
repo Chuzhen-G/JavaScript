@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Exchange Boolean</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    1. using Boolean()function to change other kind type to the boolean value
+      -Exchange Scenario:
+        Number:
+          -Besides 0 and NaN will be convert to false
+          -Others will be convert to true
+        String:
+          -Besides empty and space will be convert to false
+          -Others will be convert to true
+        null and undefined will be false
+        Object: Object always will be convert to true
+      -All the value that represent for empty or error vlaue will be convert to false:
+        0, NaN, empty string, null, undefined, false
+  */
+ let a=1;//true
+ a =-1//true
+ a=0//false
+ a=NaN//false
+ a=Infinity//true
+
+ a='abc'//true
+ a='true'//true
+ a='false'//true
+ a=''//false
+ a=" "//false
+
+ a=null//false
+ a=undefined//false
+ console.log(typeof a,a)
+ a=Boolean(a)
+ console.log(typeof a,a)
+</script>
+</html>

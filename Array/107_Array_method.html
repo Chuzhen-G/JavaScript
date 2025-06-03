@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let arr=['a','c','e','f','d','b']
+  /* 
+    sort()
+      -using sort to sort array will change original array
+      -sort() will default to ordering the array in a increasing order
+        Note: sort default will ordering by Unicode, so if directly through using "sort" to sort number
+        it may produce an incorrect result
+      -parameter:
+        -it can transform a call back function as the parameter and through call back function to make the ordering rules
+        (a,b) => a-b increasing order
+        (b,a) => b-a decreasing order
+    forEach()
+      -traversal array
+      -it will need a call back function as parameter, this parameter will be using multiple times
+        The number of call back function get call depend for how many elements in the array
+        It will transform the data in array as parameters in every time make call
+      -call back function have three parameters:
+        element current elements
+        index current index of elements
+        array the array in the traversal
+    filter()--according to the call back function to determine which element in the original function add to new function
+      -Save the elements that fit require into a new array and get return
+      -need a call back elements as the parameter, and will call the call back function for each elements then according to the return value to make judgement of adding elements to the array
+      -it is non-destructive method, it will not affect original array
+    map()--according to the call back function to adding new elements in the new array
+      -According to current array to generate a new array
+      -need a call back function as the parameters
+        The return value of call back function will become the elements in the new array
+      -Will not affect original array
+    reduce()
+      -Using to combine all the elements in one array to a single value
+      -parameter:
+        1.call back function, through call back function to make rule of combine
+        2.set initial value
+  */    
+  arr.sort()
+  arr.sort((a,b)=>a-b)
+  arr.sort((a,b)=>b-a)
+  console.log(arr)
+
+  arr = ['wukog','bajie','shaseng']
+  arr.forEach((element,index,arra)=>element.length<=6)//return elements fit requirement
+  arr =[1,2,3,4,5,6,7,8]
+  //get all even number in array
+  // filter not need element
+  let result = arr.filter((ele)=>ele>5)
+  // map new elements from old elements
+  console.log(result)
+  result = arr.map(ele=>ele*2)
+  result = arr.map(ele=>"<li>" + ele + '</li>')
+
+  arr.reduce((a,b)=>{
+    /* 
+      1, 2
+      3, 3
+      6, 4
+      10, 5
+      15, 6
+      21, 7
+      28, 8
+      36
+    */
+    console.log(a,b)
+    return a+b
+  })
+</script>
+</html>

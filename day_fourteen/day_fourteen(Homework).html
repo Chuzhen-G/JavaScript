@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let userinp = window.prompt("Please give a year")
+  let answer = "";
+  // Eliminate the possibility of year become the empty string or letters
+  // empty string and letters will return true in the isNAN, set it to get false,
+  if(userinp && !isNaN(userinp) ){
+    if((userinp % 4 == 0 && userinp % 100 !=0) || userinp % 400 == 0){
+      answer="leap year";
+    }else{
+      answer="not leap year";
+    }
+  }else{
+    alert("please give a correct form")
+  }
+  
+  let sum = 0
+  // i in here is not global value, so it can not be call in outside of the loop
+  for(let i = 1; i<=100;i++){
+    sum+=i
+  }
+  let userage = parseInt(window.prompt("Please tell me your age"))
+  let wage = window.prompt('Please tell me your wage')
+  switch(userage){
+    case 1:wage*=1.1;break;
+    case 2:
+    case 3:
+    case 4:wage*=1.15;break;
+    case 5:wage*=1.2;break;
+    default:console.log("this is invalid age")
+  }
+  let sumOfNotdivSeven = 0;
+  for(let j=0; j<=100; j++){
+    if(j % 7 ==0){
+      continue;
+    }
+    sumOfNotdivSeven+=j;
+  }
+  let firstdivseven = 0;
+  for(let u = 200; u<=300; u++){
+    if(u % 7 ==0){
+      firstdivseven = u;
+      break;
+    }
+  }
+  document.write(answer + "<br/>" + sum +"<br/>" + wage + "<br/>" + sumOfNotdivSeven + "<br/>" +firstdivseven) 
+</script>
+</html>

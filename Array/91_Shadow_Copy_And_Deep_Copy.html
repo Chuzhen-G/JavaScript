@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Shallow copy
+      -Usually the copy of array are shallow copy
+      -Shallow copy will only copy the shallow layer of object(only copy one layer)
+      -if object store data are primitive, then the shallow and deep copy are not important
+      -shallow copy will only copy the object itself, it will not copy the property(method) in the object
+    Deep copy
+      -deep copy not only copy object itself, it also reproduce the property(method) of object
+      -generally not using deep copy, poor performance
+  */
+ const arr=[{name:'wukong'},{name:'bajie'}]
+//  only reproduce arr, but not reproduce object, so change one object in one array will affect this object in other one arrau
+ const arr2 = arr1.slice()//shallow copy
+ const arr3 = structuredClone(arr) //using to deep copy
+ console.log(arr===arr3)
+</script>
+</html>

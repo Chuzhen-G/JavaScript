@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let x =100;
+  y='abc'; //same as window.y = 'abc'
+  console.log(x,y);
+  console.log(this.y);//The this at here represent window
+  let name ='lis';//window.name='lis'
+  let obj ={
+    name:"zhangs",//obj.name='zhangs'
+    age:16,
+    fn:function(){
+      console.log(this.name + this.age);//this point to the current object that execute this function
+    }
+  };
+  console.log(this.name);//this at here represent the name at window
+  obj.fn();// this at object inside refer to the name at the object
+</script>
+</html>

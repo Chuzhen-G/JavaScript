@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // let num = 0
+  // function fn(){
+  //   num++
+  // }
+
+  // fn()
+/* 
+  we can using function to hide variables we don't want to access by outside
+
+  Closure:  
+    closure is a function that can access variable in its outside function scope
+  When to use:
+    when we want to hide some information we don't want to be access by other people then use closure
+  The condition for make closure:
+    1.Nested function
+    2.the inner function need to using the varaible at the outer function
+    3.inner function should be the return value to return
+
+*/
+  function outer(){
+    let num = 0
+    return()=>{
+      num++
+      console.log(num)
+    }
+  }
+  const newFn = outer()
+  newFn()
+  newFn()
+</script>
+</html>

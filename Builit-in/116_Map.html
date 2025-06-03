@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+   */
+  const map = new Map()
+  map.set('name','wukong')
+  map.set('age',18)
+  map.set({},'hhh')
+  let obj = {name:'wukong', age:18}
+  // const test = Array.from(obj)
+  // console.log(test) //0
+  let arr = Array.from(map)//[['name','wukong']['age',18]]
+  arr = [...map]
+  console.log(arr)
+  const map2 = new Map([['name','bajie'],['age',18],[{},()=>{}]])
+  console.log(map2)
+
+  // map traversal
+  for(const [key,value] of map){
+    console.log(key, value)
+  }
+  map.forEach((key,value)=>{
+    console.log(key,value)
+  })
+  // for(const entry of map){
+  //   const [key,value] = entry
+  //   console.log(enty, key, value)
+  // }
+
+  /* 
+    map.keys() - get all the key in the map
+    map.value() - get all the value in the map
+  */
+  console.log(map.keys())//like array
+  for(const key of map.keys()){
+    console.log(key)
+  }
+
+</script>
+</html>

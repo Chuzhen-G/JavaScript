@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    When someFn() function execute, record a log
+
+    base on not change origianl function, to adding the record log function
+
+    we can using advance function to dynamic generate a new function
+  */
+
+  function someFn(){
+    return 'hello'
+  }
+
+  function outer(cb){
+    return()=>{
+      console.log('record')
+      const result = cb()
+      return result
+    }
+  }
+
+  function test(){
+    console.log('test.....')
+    return 'test'
+  }
+  let newTest = outer(test)
+  let result = outer(someFn)
+  console.log(result())
+</script>
+</html>

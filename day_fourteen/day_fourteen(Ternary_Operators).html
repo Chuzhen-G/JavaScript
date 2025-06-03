@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ternary Operators</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let rs = 3>2?'abc':'124';
+  console.log(rs);//abc
+
+  rs = []?'abc':'124';
+  console.log(rs);//abc
+
+  let str = "";
+  rs = str.length ? 'abc':'124';
+  console.log(rs);//124
+
+  str = "";
+  rs = str.length ? 'abc':2 > 3 ? 2 : 3;
+  console.log(rs);//3
+</script>
+</html>

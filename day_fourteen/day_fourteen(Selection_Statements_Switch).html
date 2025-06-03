@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Switch</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+  // Needs: according to student grade situation, if 90-100 output "A", 
+  // if 80-90 output "B", if 70-80 output "C", if 60-70 output "D"
+  // parseInt():to change the string value to the integer value(if possible)
+  // parseFloat():to change the string value to the decimal value(if possible)
+  let sgrade = parseInt(window.prompt("The student grade"));
+  let feval = "";
+  // If we want to match the case and switch, then first to ensure they are the same type
+  // then, try to modify the conditions in the switch, and the case should be put the number
+  //after them, and the number after name should have possibility match for the condtion in the switch
+  switch(Math.floor(sgrade/10)){//Math.floor():round down
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      feval = 'F';
+      break;
+    case 6:
+      feval = 'D';
+      break;
+    case 7:
+      feval = 'C';
+      break;
+    case 8:
+      feval = 'B';
+      break;
+    case 9:
+    case 10:
+      feval = 'A';
+      break;
+    default: feval = 'The grade format you get type is incorrect, please try again';
+  }
+  document.write('Your grade is:' + feval + '.');
+
+  // if
+  if(sgrade>=90 && sgrade<=100){
+    feval = "A";
+  }else if(sgrade>=80){
+    feval = "B";
+  }else if(sgrade>=70){
+    feval = "C";
+  }else if(sgrade>=60){
+    feval = "D";
+  }else if(sgrade<60){  
+    feval = "F"
+  }else{
+    feval = 'The grade format you get type is incorrect, please try again';
+  }
+</script>
+</html>

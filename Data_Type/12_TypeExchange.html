@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Exchage String</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Type exchange is to convert a kind of data type to another kind of type
+      -to change other kind of value to (String, Number and Boolean)
+    Convert to String
+      1.call toString() method to convert other type to the string
+        -call yyy method of xxx
+          ->xxx.yyy()
+        -because null and undefined do not contain String()
+          so when call toString() method to these two stuff will occur error.
+      2.call String() function to convert other types to string
+        -call xxx function
+          -> xxx()
+        -principle:
+          to those call String() function who owned toString method()
+            -Actually is in call toString()method
+          to null, it will directly transform to "null"
+          to undefined, it will directly transform to "undefined"
+      */
+ let a = 10;//10 '10'
+ a = true// true 'true'
+ a = 11n//11n '11'
+ a = undefined
+ console.log(typeof a, a);
+ a = a.toString();//"10"
+ consle.log(typeof a, a);
+
+ let b =33;
+ b = null //'null'
+ b = undefined //'undefined'
+ console.log(typeof b, b)
+ b = String(b);
+ console.log(typeof b, b)
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  // One dimensinonal array traversal
+  // for
+  let arr1 = [1,2,3,4,5];
+  for(let i=0; i<arr1.length; i++){
+    console.log(arr1[i]);
+  }
+  // for in
+  for(let u in arr1){
+    console.log(arr1[u]);
+  }
+  // forEach
+  arr1.forEach(function(value, index){
+    console.log(index, value)
+  })
+
+  // Two dimensional array traversal
+  let arr2 = [[1,2,3],[4,5,6],[7,8,9]];
+  for(let r=0; r<arr2.length;r++){//first identify row
+    for(let c=0; c<arr2[r].length;c++){//second identify column
+      console.log(arr2[r][c]);
+    }
+  }
+  for(let r in arr2){
+    for(let c in arr2[r]){
+      console.log(arr2[r][c]);
+    }
+  }
+  arr2.forEach(function(value,index){
+    arr2[index].forEach(function(v,i){
+      console.log(arr2[index][i]);
+    })
+  })
+  arr2.forEach(function(v){
+    v.forEach(function(f_v){
+      console.log(f_v);
+    })
+  })
+  
+</script>
+</html>

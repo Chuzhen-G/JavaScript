@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">click me</button>
+  <script>
+    const btn = document.getElementById('btn')
+    btn.onclick =()=>{
+      console.log(history.length)
+      history.back()//return to last page access before(through button)
+      history.forward()//return to next page access before(through button)
+      history.go(1)//positive going to next page, negative going to last page, number determine how many page you want to go(also need depend for the user history page)
+    }
+  </script>
+</body>
+</html>

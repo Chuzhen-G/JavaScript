@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let a = 'global variable a'
+  /* 
+    The scope of function is determined when it is create(lexical scope)
+      and it have nothing to do with the position it is call
+    Closure is using the lexical scope
+  */
+  function fn(){
+    console.log(a)
+  }
+  function fn2(){
+    let a ='fn 2 a'
+    console.log(a)
+    fn()//fn in here will be the a in the global, since it scope is determined when it is create
+  }
+  fn2()
+  function fn3(){
+    let a='a in fn3'
+    function fn4(){
+      console.log(a)
+    }
+    return fn4
+  }
+  let fn4 = fn3()
+  fn4()
+</script>
+</html>

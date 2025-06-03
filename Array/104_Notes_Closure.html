@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function outer(){
+    let someVariable ='someValue'
+    return function inner(){
+      console.log(someVariable)
+    }
+  }
+  /* 
+    Life span of closure:
+      1.closure produce when call outer function, each time when call outer function, it will produce a new closure
+      2.It will disapper when the inner function is lose(inner function is lose when Garbage Collection)
+    Note:
+      Closure is mainly using to hide some contents that don't want to be access by outside
+        it means closure need occupy certain memory
+      Compare to class, closure will waste memory capacity(class can using prototype but closure can't)
+        When the number of execute time is less, using closure
+        when the number of execute time require lots, using class
+  */
+
+ function outer2(){
+  let num =0
+  return ()=>{
+    num++
+    console.log(num)
+  }
+ }
+ const fn1 =outer2() //independent closure
+ const fn2 = outer2() //independent closure
+ fn1()
+ fn2()
+ fn1 = null;
+ fn2 = null;
+</script>
+</html>

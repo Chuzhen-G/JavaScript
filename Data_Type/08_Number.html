@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Number
+      -Integers and flaot numbers are consider as Number type in JS
+      -The Number in JS is not infinity, when the number excess certain range, it will show a nearst value
+      -Be careful to doing some operation that require high accuarcy in JS.
+      NaN is also a special value, it represent illeagl value/
+      */
+  let a = 10;
+  a=10.5;
+  a=3.14;
+  a= 99999999999999999999999991;
+  a = 2**3
+  a = Infinity;
+  a = 1.111111111111111111111111;
+  a = 0.00000000000000000000000001;
+  a = 0.1+0.2;
+  a = 1-'a';//NAN (not a number)
+  a = NaN;
+
+    /* 
+        BigInt
+        -using BigInt to represent some large integer
+        -BigInt using "n" to end, the number range it can represent is infinity(according to the memory).
+    */
+   a=999999999999999999999999999n
+   /* 
+      Other base number;
+      Binary: 0b;
+      Octal: 0o;
+      hexadecimal: 0x;
+   */
+  a=0b1010;
+  a=0o10;
+  a=0xff;
+ console.log(a);
+</script>
+</html>

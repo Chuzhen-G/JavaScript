@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Function</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //Create function
+  // 1. Normal 
+  function fn1(n){
+    console.log(n);
+  }
+  fn1(10);
+  // 2. Using variable to get initialize function
+  let fn2 = function(n){
+    console.log(n);
+  }
+  fn2(100);
+  // 3. Using new to create(avoid use)
+  let fn3 = new Function();//Create a function object fn3 through Function.
+  fn3 = function(n1,n2){
+    console.log(n1+n2);
+  }
+  fn3(10,20)
+
+  // Function transform parameters
+  // 1. Not transform()
+  function show(){
+    console.log('Hello everyone!')
+  }
+  show();
+
+  // 2.transform(parameterr can be variables, objects, arrays, expressions functions)
+  function person(obj){
+    return obj.name + "," + obj.sex;
+  }
+  let stdent = new Object();
+  stdent.name = "CZ";
+  stdent.sex = "Male";
+  console.log(person(stdent));
+  console.log(person({name:'zhangsang',sex:"Male",age:18}));
+  // The info at here is the default value, which means if we don't have set any parameters
+  // in the function call, then it will automatically have the value we put in the formal parameters
+  // but once we have this parameter in the function call, it will be set as the value we give.
+  function person2(obj, info='a good student'){
+    return obj.name + "," + obj.sex + "," + info;
+  }
+  stdent = new Object();
+  stdent.name = "CZ";
+  stdent.sex = "Male";
+  console.log(person2(stdent));
+  console.log(person2({name:'zhangsang',sex:"Male",age:18},'study well'));
+
+  function box(sumFunction, num){
+    // The sumFunction at here will be replace to the sum.
+    // So it will then execute sum function.
+    return sumFunction(num);
+  }
+  function sum(num){
+    return num + 10;
+  }
+  let result = box(sum, 10); //transform a function into another function
+  console.log(result);//20
+</script>
+</html>

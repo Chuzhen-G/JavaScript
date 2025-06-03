@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Quantity word
+      {m} means if found m (characters(before the brackect)) continuous in a string
+      {m,} means at least m (characters(before the brackect)) continuous in a string
+      {m,n} means m-n(characters(before the brackect))
+      + means at least one(character before it), same as {1,}
+      * means any number(character before it)
+      ? means 0-1 times {0,1}
+      */
+
+ let re = /^a{3}$/
+ re = /(ab){3}/
+ re= /^[a-z]{3}$/ //same as /^[a-z][a-z][a-z]$/ three small case letter
+ re = /^[a-z]{1,}/
+ re=/^[a-z]{1,3}/
+ re=/^ba+$/
+ re=/^ba*$/
+ re=/^ba?&/
+ let result =re.test('aaba')
+ console.log(result)
+</script>
+</html>

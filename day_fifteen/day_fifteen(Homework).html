@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let check = window.prompt('Type your password')
+  let reg= /^[A-Za-z0-9_]{6,20}$/;
+  if(!reg.test(check)){
+    alert('the answer u type is incorrect')
+  }
+  let arr1 = [];
+  arr1[1]=223;
+  arr1[3]=666;
+  arr1[5]='hello';
+  arr1[20]=true
+  for(let i = 0;i<arr1.length;i++){
+    if(arr1[i]==null){
+      arr1.splice(i,1);
+      i--;
+    }
+  }
+  console.log(arr1);
+  let arr2 =[1,2,2,3,5,4,3,3,3,3,5,4,6,7,6,9,9,9,9]
+  for(let i = 0; i<arr2.length;i++){
+    for(let j =0; j<i; j++){
+      if(arr2[i]===arr2[j]){
+        arr2.splice(i,1);
+        i--;
+      }
+    }
+  }
+// other way
+  arr2 =[1,2,2,3,5,4,3,3,3,3,5,4,6,7,6,9,9,9,9]
+  let newArr=[];
+  for(let i = 0; i<arr2.length;i++){
+    if(newArr.indexOf(arr2[i])<0){//indexOf using to return the location that the spcific data appear on the array, if not found, then return -1
+      newArr.push(arr2[i]);
+    }
+  }
+  arr2 = newArr;
+  console.log(arr2);
+</script>
+</html>

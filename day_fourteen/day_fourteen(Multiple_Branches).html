@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Branches</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let x = window.prompt("Please enter the x value for function f(x)")
+  let y;
+  // if(x<=3){
+  //   y=0;
+  // }else if(x<=8){
+  //   y=(x-3)/5;
+  // }else{
+  //   y=1;
+  // }
+
+  if(x<=3){
+    y=0;
+  }else{
+    if(x<=8){
+      y=(x-3)/5;
+    }else{
+      y=1;
+    }
+  }
+  console.log('f(x) = ' + y);
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Function</title>
+</head>
+<body>
+  
+</body>
+<script type="text/javascript">
+  // no parameter
+  function show1(){
+    console.log('Hello world');
+  }
+  let show2 = function(){
+    console.log('Hello world2');
+  }
+  show1();//even if don't transform parameter, the parentheses at here can't be omit
+  show2();
+
+  //actual parameter
+  function sum1(a,b){
+    let x = a+b;
+    console.log(x);
+  }
+  sum2 = function(a,b){
+    let x = a+b;
+    console.log(x);
+  }
+  sum1(10, 20);
+  sum2(20, -30);
+
+  // Parameter match: If actual parameter number excess formal parameter number, then the 
+  //actual parameter will sequentially transform to the formal parameter, and ignore rest of
+  // parameter value.
+  sum3 = function(x,y,){
+    let sum=x+y;
+    console.log(sum);
+  }
+  sum3(10,20,30);
+
+  // Parameter match:If formal parameter number excess actual parameter number, then the
+  // formal parameter will sequentially transform to the actual parrameter, and ignore rest of
+  // parameter(and those parameter will be default set to undefined).
+  function sum4(a,b,c,d){
+    let sum = a+b+c+d;
+    console.log(sum); //NaN
+  }
+  sum4(10,20,30);
+
+  // IIFE
+  (function(){
+    let x = 12 + 13;
+    console.log(x);
+  })();
+  (function(a, b){
+    let x = a+b;
+    console.log(x);
+  })(11,12);
+</script>
+</html>

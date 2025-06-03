@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relation operations</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let test = 'A';
+  console.log(30>20); //true
+  console.log(30>=20); //true
+  console.log('a'<'AAJISJDISJDIS');//false
+  console.log('a'<'aAJISJDISJDIS');//false
+  // using the "".charCodeAt() to find the ASCII value
+  console.log('a'.charCodeAt(0));//97
+  // autoboxing the 'a' and test, change primitive type to object
+  // unboxing change object to primitive type
+  console.log(test.charCodeAt(0));//65
+
+  console.log('100' == 100); //true
+  console.log('100' === 100); //false
+  // compare first character, 3 have 50, a have 97
+  console.log('3845' > 'a')//false
+  // when using true to doing the comparison(logic value and other type), true will automatically change to the numbers "1"
+  // false will automatically change to the "0"
+  console.log(true > 0) 
+</script>
+</html>

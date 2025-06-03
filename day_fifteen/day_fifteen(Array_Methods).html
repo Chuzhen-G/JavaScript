@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ArrayMethods</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let arr=[1,2,3,4];
+  console.log(arr);
+  // i)push()
+  arr.push(10);
+  arr.push('Hello');
+  arr.push(undefined);
+  console.log(arr);
+  // ii)pop()
+  arr.pop()//Only can delete last elements at a time
+  arr.pop()
+  let dl=arr.pop();
+  console.log(arr + " " + dl);
+  arr = []; //Empty the arr
+  console.log(arr);
+  // iii)unshift()
+  arr.unshift('aaaaaaa');
+  arr.unshift('a','b','c');
+  arr.unshift(['a','b','c']);
+  console.log(arr);
+  // iv)shift()
+  arr.shift();
+  console.log(arr);
+  // v)concat()
+  let arr2 = ['111','222','333'], arr3 = "1";
+  let arr4 = arr.concat(arr2,arr3);
+  console.log(arr4);
+  // vi)reverse()
+  arr = [1,2,3,4];
+  console.log(arr);
+  arr2 = arr.reverse();
+  console.log(arr2);
+  // vii)join()
+  let str = arr.join();//Change a array to the string
+  console.log(typeof(arr));//object
+  console.log(typeof(str));//string
+  console.log(str);
+  str = arr.join('%')//Using % instead of , when transform it to string and connect elements from array using the sign we assign
+  str = arr.join('')//empty between elements
+  // viii)splice()
+  let arr1 = [1,2,3,4];
+  console.log(arr1);
+  // 1.delete elements
+  arr2 = arr1.splice(1,2);//splice return the value that have been delete, which is[2,3]
+  console.log(arr1); //Value [1,4]
+  console.log(arr2);//Value [2,3]
+  // 2.modify elements
+  arr1 = [1,2,3,4];
+  arr2 = arr1.splice(1,2,"aa", 'bb', 'cc');
+  console.log(arr1)//Value [1,"aa", 'bb', 'cc',4]
+  // 3.adding elements
+  arr1 = [1,2,3,4];
+  arr1.splice(1,0,'aa');//adding middle
+  console.log(arr1)//Value [1,'aa',2,3,4]
+
+  arr1.splice(0, 0, "Yo")//adding head
+  arr1.splice(arr1.length, 0, "lo")//adding tail
+  console.log(arr1);
+</script>
+</html>

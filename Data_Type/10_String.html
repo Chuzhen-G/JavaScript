@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    String
+      -Using single quotation mark and double quotation mark to represent a string in JS
+      -Escaping character \
+        \" -> "
+        \' -> '
+        \\ -> \
+        \t -> table
+        \n -> switch line
+      -Template String
+        -Using opposite single quotation mark `to represent template string
+        -template string can embed variable(${variable name})
+      -Using typeof to check a string will return a "string"(regardless string type)
+  */
+ let a = 'Hello World';
+ a = "Hello World";
+ a = 'Hello \"\" W\to\nrld';
+ a = `Hel
+ lo W
+ orld`;
+ let name = 'Wukong'
+  // The below part is to say make a anchor at the string with the variable "name"
+ let str = `Hello, ${name}`
+ console.log(a);
+ let b = 10
+ console.log(`b=${b}`)
+ let c = "5"
+ c = 'hhh'
+ console.log(typeof c)
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    split()
+      -can according to the regular expression to split a string
+    search()(return index)
+      -can using to search the content in string first appear place that fit to the regular expression 
+    replace()(replace characters by new characters)
+      -according to regular expression to subsituite the specific content in string
+    match()(return matches characters)
+      -according to the regular expression to match the content that fit requirement in string
+    matchAll()
+      -according to the regular expression to match all the content that fit requirement in string(must set g, global match)
+      -it will return an iterator
+  */
+  let str = "a@b@c@d"
+  let result = str.split('@')
+  str = 'wukongabcbajieadcshaheshang'
+  let reg =  /a[a-z]c/;
+  result = str.split(reg);
+  str = 'dajsdh13715678903jasdlakdkjk13457890657djashdjka13811678908sdadadasd'
+  result = str.search('abc')
+  result = str.search(/1[3-9]\d{9}/g)
+  console.log(result)
+  result = str.replace(/1[3-9]\d{9}/g,'haha')//same as replaceAll(/1[3-9]\d{9}/,'haha')
+  result = str.match(/1[3-9]\d{9}/g)
+  result = str.matchAll(/1[3-9](\d{9})/g)
+  for(let item of result){
+    console.log(item)
+  }
+</script>
+</html>

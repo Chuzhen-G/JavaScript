@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Recursion
+      -the function who call itself is recursion function
+      -The role of recursion are similar to loop
+    Two requirement for recursion:
+      1.base condition -- when to end
+      2.recursion condition -- How to decompose the problem
+    The role of recursion and loop are same, the different is recursion thinking will more clearly, loop performance will more good
+      In real development, try using loop more than recursion
+      only in the case using loop is more troublesome, then use recursion
+  */
+ function jiecheng(num){
+  let sum = 1
+  for(let i =2;i<=num;i++){
+    sum*=i
+  }
+  return sum;
+ }
+ let result = jieCheng(3)
+ function jiecheng1(num){
+  if(num===1){
+    return 1;
+  }
+  return num*jiecheng1(num-1);
+ }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Return</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function max1(a,b){
+    return a>b?a:b;
+  }
+  console.info(max1(100,20));
+
+  function max2(a,b){
+    console.info(a>b?a:b);
+    return;//end the function;
+    console.log("kkkkkkkk");
+  }
+  max2(100,20);
+  
+  // IIFE
+  let rs = (function(a,b){
+    return a>b?a:b;
+  })(100,20);
+  console.info(rs);
+</script>
+</html>

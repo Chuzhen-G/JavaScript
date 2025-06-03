@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    String(non-destructive):
+      -The intrinsic for string is a characters array
+      -'hello' ->['h','e','l','l','o']
+      -many methods in string are similar to array
+      -property and methods:
+        length using to get length of string
+        string[index] to get the letter in the specific location
+        str.at()
+          -according to index to get characters, can accept negative index
+        str.charAt()
+          -according to index to get characters
+        str.concat()
+          -Using to connect two or more strings
+        str.includes()-second parameter indicates start position
+          -Using to check if string contain some specific content
+            if yes, return true
+            if no, return false
+        str.indexOf()
+        str.lastIndexOf()
+          -check if string contain a specfic content
+          -return index
+        str.endsWith()
+          -check if string is end with specific content
+        str.startWith()
+          -check if string is start with specific content
+        str.padStart()(first parameter indicate how many space, second parameter indicates using what to fill)
+          -Through adding specific information at the start, to make string keep certain length
+        str.padEnd()
+          -Through adding specific information at the end, to make string keep certain length
+        str.replace()
+          -Using a new string to replace the specific content
+        str.replaceAll()
+          -Using a new string to replace all the specific content
+        str.slice()
+          -To cut string
+        str.substring()
+          -To cut string, will switch parameter position if parameter two greater than parameter one
+        str.split()
+          -Using to split a string to a new array
+        str.toLowerCase()
+          -To change string to lower case
+        str.toUpperCase()
+          -To change string to upper case
+        str.trim()
+          -To delete the empty space in the start and end of string
+        str.trimStart()
+          -To delete the empty space in the start of string
+        str.trimEnd()
+          -To delete the empty space in the end of string
+        */  
+ let str = 'hello'
+ for(let char of str){
+  console.log(char)
+ }
+ console.log(str.at(0))//can transform negative value
+ console.log(str.charAt(0))
+
+ str = 'hello hello how are you'
+ console.log(str.includes('Tom',1))
+ console.log(str.endsWith('you'))
+ str = '100'
+ console.log(str.padStart(7,'0'))
+ let result = str.replace('hello','abc')
+ result = str.replaceAll('hello','abc')
+ console.log(result)
+ result = str.slice(12,15)
+ result = str.substring(15,12)
+ console.log(result)
+ str = "adada@ad@dads@ads2@"//['adada', 'ad', 'dads', 'ads2']
+ result = str.split('@')
+ result = str.toUpperCase()
+ result = str.toLowerCase()
+ str='          s  t  r            '
+ result = strr.trim()
+</script>
+</html>

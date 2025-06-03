@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    for-of statement is using for traversal the object that can iterates
+
+    Grammar:
+      for(variable of iterable object){
+        statement....
+      }
+    Excute process:
+      the loop body of for-of will execute multiple time, its number depend for how many elements in it
+        It will set the element to the variable in each time execute
+  */
+ const arr = ['wukong','bajie','shaseng','tangseng']
+ for(let value of arr){
+  console.log(value)
+ }
+ for(let value of 'hello'){
+  console.log(value)
+ }
+</script>
+</html>

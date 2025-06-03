@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Garbage collection
+      -After program running a long time, it will produce garbage
+      -In program world, what is garbage?
+        -If an object does not point by any variable, then this object is grabage
+        -The exist of garbage object will affect to the performance of program in seriously
+        -JS have automatically garbage colllect function, those garbage object will automatically collect by interpretor, don't need manually handle 
+        -to garbage collection, the only thing we can do is set the varaible we don't need anymore to null
+  */
+
+ let obj = {name:'wukong'}
+ let obj2 = obj
+ obj = null
+ obj2 = null
+</script>
+</html>

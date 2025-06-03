@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    indexOf()
+      -using to get the index that element first time appear on array
+      -parameters:
+        1.The elment that need to search
+        2.The start position to search
+    lastIndexOf()
+      -using to get the index that element last time appear on array
+      -return value:
+        if found return the index of this element,
+        if not return -1.
+    join()
+      -connect the elements in the array to a string
+      -[1,2,3,4,2,1] -> 1,2,3,4,2,1
+      parameter:
+        nominate a string as the connect sign
+    slice()
+      -Using for cut array(non-destructive method)
+      -parameter:
+        1.start cut position(include this position)
+        2.end cut position(exclude this position)
+          -The second parameter can omit, if omit it will cut to the end
+          -index can be negative
+        if omit both parameter, then we can doing shallow copy to array
+  */
+ const arr=[1,2,3,4,2,1]
+ let result = arr.indexOf(4,2)
+ result = arr.lastIndexOf(1,2)
+ result = arr.indexOf(0)
+ result = arr.join('')
+ result = arr.slice(0,2)
+ result = arr.slice(2);
+ console.log(result)
+</script>
+</html>

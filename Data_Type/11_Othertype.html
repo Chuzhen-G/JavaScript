@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other Kinds</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+  Boolean
+    -mainly using for doing the logic operation
+    -boolean value only have true and false
+    -using typeof to check a boolean value will return "boolean"
+
+  Empty value(Null)
+    -null using to represent empty object
+    -empty value only have null
+    -using typeof to check a null value will return object
+    -using typeof can not acruate to check "null" value
+  Undefine
+    -When declare a variable without set value, then it value will be undefined
+    -The value of undefined type only have "undefined"
+    -using typeof to check a undefined value will return "undefined"
+  Symbol
+    -Using to create a unique sign
+    -using typeof to check a symbol will return "symbol"
+
+    JS have seven primitive type:
+      1.Number
+      2.BigInt
+      3.String
+      4.Boolean
+      5.Null
+      6.Undefined
+      7.Symbol
+      Those seven primitive type are the bases of different kind data
+        primitive type in JS is unchangeable type, it can't be change once create(data can't be change, pointer/addrerss can be change)
+    */
+
+ let bool = true;//true
+ bool = false;//false
+ let num =1;
+ let a = null;
+ console.log(typeof bool);
+ console.log(num);
+ console.log(typeof a);
+ let b = undefined;
+ console.log(typeof b);
+ let c = Symbol()// call Symbol() to create a symbol;
+ console.log(typeof c);
+</script>
+</html>

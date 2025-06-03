@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>  
+  /* 
+    In JS, besides directly create primitive, we can also create the object of primiive type
+      Through new String() we can create String type object
+      Through new Number() we can create Number type object
+      Through new Boolean() we can create Boolean type object
+        -But do not do this, 
+    Wrap Class:
+      Five wrap class in JS
+        String -> string wrap to String object
+        Number -> number wrap to Number object
+        Boolean -> boolean wrap to Boolean object
+        BigInt -> bigint wrap to BigInt object
+        Symbol -> symbol wrap to Symbol object
+          -Through wrap class it can wrap a primitive value to Object
+            when we call method or property to a primitive value, Js interpretor will temporary to wrap primitive value to correspond object
+              and then call the property and method for this object
+      -Because primitive value will be transform to object temporary, therefore primitive value can directly call methods that in those objects
+        */
+  let str = new String('hello')
+  let int = new Number(11)
+  let bool = new Boolean(true)
+  let bool2 = new Boolean(true)
+  str.name='haha'
+  let num = 11
+  num = num.toString()
+  alert(bool==bool2)
+  // let symbol =new Symbol('hhh')
+</script>
+</html>

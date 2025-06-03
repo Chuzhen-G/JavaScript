@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // new
+  // method1
+  //Create a empty array, the arr1 in here means the array name, it stores the address of this array
+  let arr1 = new Array();
+  arr1.push(1);//adding data to the array
+  arr1.push(true);
+  arr1.push('abc');
+  for(let i=1; i<=10; i++){
+    arr1.push(i);
+  }
+  console.log(arr1);
+  // method2
+  // Create a array with the initialize operation
+  let arr2 = new Array(123,false,null,'aaa');
+  console.log(arr2);
+  
+  // literal create
+  // Method 3
+  //Create a empty arr
+  // Create a empty array
+  let arr3 = [];
+  arr3.push(123);
+  arr3.push(true);
+  arr3.push('abc');
+  console.log(arr3);
+
+  // Method 4
+  // In real develoment, put same type data in one array as possible
+  arr4 = [1,2,3,'aaa',true];
+  console.log(arr4);
+</script>
+</html>

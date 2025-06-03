@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let x = 10; y = 20;
+  console.log(x + y);//30
+  console.log(x - y);//-10
+  console.log(x * y);//200
+  console.log(x * x * (x-1))//900
+  console.log(2 * 2 * 2);//8
+  console.log(x / y);//.5
+  console.log(x % y);//10
+  console.log(13 % 5); //3
+  console.log(13.7 % 5); //3.7
+  console.log(13 % 5.2);;//2.6
+  console.log(-13 % 5);//-3
+  console.log(-13 % -5);//-3
+  // The sign are determine by the dividend
+  console.log(13 % -5);//3
+  console.log(10 / 0); //infinity
+  // let z = ++x; //x = x + 1; z = x; front increment 1
+  // console.log(x, z) //11, 11
+  // let z = x++; //z = x; x = x + 1; back increment 1
+  // console.log(x, z) //11 10
+  /* if we using z=++x, then it means adding x at the first, then doing z=x, if we use z=x++, it means doing z=x at first, then change the
+  * x values, whwich means, one will add immediately,  one will add afterward. so in case x+++x, the first x is still 10, then after it, it 
+  * increment x by 1, thus it is 10 + 11, 21, if we have x+++++x, this will be 11 at first, the second one is still 11, result in 22, but 
+  *current x will change to 12.
+  **/ 
+  let z = x+++x;
+  console.log(x,z);
+</script>
+</html>

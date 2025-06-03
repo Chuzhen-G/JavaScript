@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const d = new Date()
+  let result =d.toLocaleDateString()//change the date to local string(date)
+  result =d.toLocaleTimeString()//change the time to local string(time)
+  result =d.toLocaleString()//change both
+
+  /* 
+    toLocaleString()
+      -To change a date to locale time format string
+      -parameter:
+        1.the string describe language and country information
+          zh-CN Chinese China
+          zh-HK Chinese (Traditional) Hongkong
+          en-US English Amereican
+        2.Need a object for parameter, we can using property of object to modify the format of date
+          dateStyle the style of date
+          timeStyle the style of time
+            full
+            long
+            medium
+            short
+          hour12, whether to using 12 hour style(p.m, a.m)
+            true
+            false
+          weekday the style of weekday performance
+            long
+            narrow
+            short
+          year 
+            2-digit
+            numeric
+  */
+ console.log(d.toLocaleString('en-US', {hour12:true, dateStyle:'long',timeStyle:'medium',weekday:'long', year:'numeric'}))
+  console.log(result)
+</script>
+</html>

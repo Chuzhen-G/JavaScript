@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Math
+      -Math is a tool class
+      -Math provide  the method and constant in the math operation
+      -Constant:
+        Math.PI PI
+      -Method
+        Math.abs() find the absolute value for a number
+        Math.min() find the minimum number in multiple value
+        Math.max() find the maximum number in multiple value
+        Math.pow() find the y index for x
+        Math.sqrt() find the square root for a number
+
+        Math.floor() round dowwn
+        Math.ceil() round up
+        Math.trunc() delete decimal number
+        Math.round() rounding
+
+        Math.random() generate a random number between [0,1)
+  */
+ console.log(Math.PI)
+ let result = Math.abs(-10)
+ result=Math.min(10,20,30,44,55,-1)
+ result=Math.min(10,20,30,44,55,-1)
+ result = Math.pow(4,2) //4**2
+ result = Math.sqrt(4) //4**.5
+
+ result = Math.floor(2.999)
+ result = Math.ceil(2.5)
+ result = Math.trunc(-3.6)
+ result = Math.round(5.1)
+ result = Math.random()
+ for(let i=0; i<10;i++){
+  /* 
+    generate a random number between 0-5
+  */
+  result=Math.round(Math.random()*5)
+  result=Math.round(Math.random()*5)+1
+ }
+ console.log('complete')
+ console.log(result)
+</script>
+</html>

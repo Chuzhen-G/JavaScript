@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS writing location</title>
+  <!-- 1.can write js inside the webpage by using script tags-->
+   <script type="text/javascript">
+      alert('jaja')
+   </script>
+  <!-- 2.import js from outside -->
+   <script src="#">
+    // if we using this script to import outside script, then here should be empty
+   </script>
+   <!-- 3. write js inside the tags-->
+    <!-- only if click button then execute js code-->
+    <button onclick="alert('cnm')">Click me</button>
+    <!-- if mouse is on the button then execute js code -->
+    <button onmousemove="alert('cnm')"></button>
+    <hr>
+    <!-- execute the js code inside href -->
+    <a href="javascript:alert(123);">link</a>
+    <!-- execute the js code after javascript: -->
+    <a href="javascript:">link</a>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Argument Object</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function sum(){
+    // in here the arguments will work like array, it will be the number of parameter in the call, and also store their actual value
+    // it is mainly using to get the data for the real parameters
+    console.log(arguments);
+    console.log(arguments.length);//get numbers of real parameters
+    console.log(arguments[0]);//get first real parameter
+    let sum = 0;
+    for(let i = 0; i<arguments.length; i++){
+      //console.log(arguments[i])
+      sum += arguments[i];
+    }
+    return sum;
+  };
+  console.log(sum(1,2,3));
+  console.log(sum(10,20,30,40,50));
+</script>
+</html>

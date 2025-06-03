@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function fn(){
+    /* 
+      arguments
+        -arguments is an implicit parameter on function
+        -arguments is array object class(pseudo-array)
+          -Similar as array, it can using index to access elements, also can using for to loop varaible, but it is not a array object, so can't using the method in array
+        -arguments is using to store the real parameters for function
+          whether user define or not formal parameters, the real parameters will all store in the arguments object
+          we can through this object to access real parameter
+    */
+    console.log(arguments[2])
+    console.log(Array.isArray(arguments))
+    for(let v of arguments){
+      console.log(v)
+    }
+    arguments.forEach((elements)=>console.log(elements))
+  }
+  fn(1)
+  // to define function that can using to find sum of arbitary number of value
+  function sum(){
+    let result = 0
+    for(let va of arguments){
+      result+=va
+    }
+    return result
+  }
+  /* 
+    ...args
+    changable parameter, parameter can be denominate as changable parameter when define function
+      -changable parameter can receive any number real parameters, and store them in a single array
+      -the role of changeable parmeters and arguments are almost same, but also have some different
+        1. changeable parameters can naming by us
+        2. changeable parameters is already an array, so it can directly using the method that in array
+        3. changeable parameters can using with other parameters
+  */
+//  when using changeable parameters with normal parameters, we need to write changeable parameters at the end
+ function fn2(a,b,...args){
+
+ }
+ function sum2(...num){
+  return num.reduce((a,b)=>a+b,0)
+ }
+ function fn3(a,b){
+  for(let v of arguments){
+    console.log(v)
+  }
+ }
+</script>
+</html>

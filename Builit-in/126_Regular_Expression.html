@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    reg.exac()
+      -using to get the content that in string fit with the regular expression
+    i. means ignore case
+    g. means global match(all characters in string)
+    (). means create a group to group the element that it circle with in the corresponding part of string that match to the regular expression
+  */
+ let str = 'abcaecafcacc'
+
+ let reg = /a(([a-z])c)/ig
+
+ let result = reg.exec(str)
+ while(result){
+  console.log(result[0],result[1],result[2])
+  result=re.exec(str)
+ }
+ console.log(result)
+</script>
+</html>

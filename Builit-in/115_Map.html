@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Map
+      -Map is using to store key-value data
+      -The data store by Object can be considered to be a kind of key-value structure
+      -The main difference between Map and Object:
+        -The property name of Object can only be string and symbol, if transform another kind property name
+          JS interpretor will automatically change it to string
+        -In Map, any kind of value can be call the key of data
+  */
+ const obj2 = {}
+ const obj={
+  name:'wukong',
+  age:18,
+  [Symbol]:'haha',
+  [obj2]:haha
+ }
+
+ /* 
+  Create:
+    new Map()
+  Property and method:
+    map.size() using to get the number of key-value in map
+    map.set(key,value) adding the key-value into map
+    map.get(key) according key to get value
+    map.delete(key) delete the specific data
+    map.has(key) to check if map contain the specif key-vale
+    map.clear() using to delete all the key-value
+ */
+//  create a Map
+const map = new Map()
+map.set('name','wukong')
+map.set(obj2,'hh')
+map.set(NaN, 'hhhhh')
+map.delete('haha')
+map.has(obj2)
+map.clear()
+delete obj.name
+console.log(map.size)
+console.log(map.get('name'))
+</script>
+</html>

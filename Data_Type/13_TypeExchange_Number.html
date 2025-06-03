@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type exchange</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    to convert other kind of data type to the Number
+      1.using Number()function to convert other kind type to Number
+        Exchange Scenario
+          -String:
+            -If string is a legal number, then it will automatically convert to the correspond number
+            -If string is not a legal number, then it will convert to NaN
+            -If string is empty or space string, it will convert to 0
+          -Boolean:
+            -true convert to 1, false convert to 0
+          -null convert to 0
+          -undefined convert to NaN
+        Two specialized way to convert string to number
+          parseInt() -- to convert a string to a integer
+            -When in the analyzing, it will read the string from left to right, until read all validate number in the string
+            (Note: if string at middle, then it will not read the number after it)
+            -We can also using parseInt() to rounding a number.
+          parsefloat() -- to convert a string to a float number
+            -When in the analyzing, it will read the string from left to right, until read all validate number in the string
+            (Note: if string at middle, then it will not read the number after it)
+  */
+ let a = '123'//123
+ a='abc' //NaN
+ a=''//0
+ a=' '//0
+ a=true//1
+ a=false//0
+ a=null//0
+ a=undefined//NaN
+ console.log(typeof a, a)
+ a = Number(a)
+ console.log(typeof a, a)
+
+ let b = '12p3px';
+ b = 456.123
+ b = parseInt(b);
+ console.log(typeof b, b);
+</script>
+</html>

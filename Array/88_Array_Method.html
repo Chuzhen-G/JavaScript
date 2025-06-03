@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Array.isArray()
+      -Using to check if an object is array
+    at()
+      -Can according to index to get specific elements
+      -at can accept negative index as parameter
+    concat()
+      -Using to connect two or more array
+      -It is non-destructive method and will not affect to original array, instead it will return a new array
+  
+  */
+ console.log(Array.isArray([1,2,3]));//true
+ console.log(Array.isArray({name:'Wukong'}))//false
+ const arr =[1,2,3,4]
+ console.log(arr.at(-1))
+ const arr2=['baigu','zhizhu','yutu']
+ let arr3=arr.concat(arr2)
+ console.log(arr3)
+ console.log(arr)
+</script>
+</html>

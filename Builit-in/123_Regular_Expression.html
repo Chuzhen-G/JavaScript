@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Regular Expression
+      -Regular expression is using to define a rule
+      -Through this rule computer can check if a string is fit this rule
+        or to take the content that fit the rule from string
+      -Regular Expression is also an object in JS
+        so to use regular expression, we have to create the object of regular expression at first
+  */
+
+  let str = 'abc'
+  //  new RegExp() can accept two parameters(string) 1.pattern rule 2.flags(match mode)
+  let reg = new RegExp('a','i') //through construct funtion to create an object of regular expression
+
+  //  using literals to create regular expression /pattern rule/flags
+  reg = /a/i
+  reg=/\w/
+  reg = new RegExp('\\w')
+
+  reg = new RegExp('a')// /a/ represent, to check if a string contain a
+
+  // using regular expression to check if a string is fit rule
+  str = 'a';
+  let result = reg.test(str)//true
+  result = reg.test('b')//false
+  result = reg.test('abc')//true
+
+  reg =/a/
+  
+  console.log(result)
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object Reference</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let obj4={
+    aa:'bb',
+    cc:true,
+    dd:123,
+    fn1:function(a,b){
+      console.log(a + " " + b);
+    },
+    fn2:function(){
+      console.log(2222222);
+    }
+  };
+  console.log(obj4.aa);
+  obj4.fn1('Hello', "World");
+
+  console.log(obj4['aa']);//the aa in here need to have quotation mark.
+  obj4["fn1('Hello', 'World')"];
+  
+  // If we want to find the value that correspond to 'aa' in obj4
+  // The generally using obj4.str will not work, because it is undefined variable in obj4.
+  // The using of [] can ensure to using the value that store in the 'str' to get the reference
+  let str='aa';
+  console.log(obj4[str]);//When the property name are store in a variable, we can only using [] to get value and can not add string.
+</script>
+</html>

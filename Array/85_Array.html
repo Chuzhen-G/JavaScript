@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Array
+      -Array is also a composite data type, array can store multiple different type data
+      -The data store in the array are ordering, every data in the array will have a unique index
+        we can using index to manipulate and gather data
+      -The data store in the array is elements
+      -index is a set of number greater or equal 0
+      -Create Array
+        thorugh Array()to create array, also can using [] to create array
+      -Adding element to array
+        Grammar:
+          array[index] = element
+      -reading the elements in the array
+        Grammar: 
+          array[index]
+            -if read a element that does not exist, it will not error but undefined
+      -length
+        -using to get number of elements in the array(length)
+        -The actual value will be the biggest index in the array+1
+        -adding element in the end of the array
+          array[array.length] = element
+        -length is editable(too long, will adding null element, to short will delete the element from back)
+  */
+ const obj ={name:'wukong', age:18}
+ const arr=new Array()
+ const arr2=[1,2,3,4,5]//array literals
+ console.log(arr)
+ console.log(arr2)
+
+ arr[0]=10
+ arr[1]=22
+ arr[2]=44
+ arr[3]=88
+ arr[0]=77 
+ arr[0].length = 10
+//  When using array, try to avoid incontinual array, because its performance is not well
+ arr[arr.length]=33
+ console.log(typeof arr)
+</script>
+</html>

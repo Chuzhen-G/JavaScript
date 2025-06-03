@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Desctructing Assignment
+  */  
+ const arr = ['wukong','bajie','heshang']
+ let a,b,call
+//  a=arr[0]
+//  b=arr[1]
+//  c=arr[2]
+;[a,b,c] =arr//destructing assignment
+
+let [d,e,f,g] = arr;//declare and destructing
+ ;[d,e,f,g] = [1,2,3];//g will be undefined
+ ;[d,e,f=77,g=77] = [1,2,3];//1, 2, 3, 77
+ ;[d,e,f,g=g] = [1,2,3]//1, 2, 3, 77
+ let[n1, n2, ...n3] = [4,5,6,7]// when destructing array, we can using ... to gather reminder elements
+  console.log(n1,n2,n3);
+
+function fn(){
+  return['erlan','bajie']
+}
+let [name1,name2] = fn2()
+let a1=10
+let a2=120
+// can through using destructing assignment to fast exchange the values of two variables
+;[a1,a2] = [a2,a1]//[20,10]
+const arr2 = ['wukong','bajie'];
+arr2 = [arr2[1],arr2[0]];
+console.log('a1=',a1)
+cosnole.log('a2=',a2)
+
+  /* array can store any kind of data, it can also store array 
+      if the elements of an array is still array, then we call it 2D array
+  */
+  let array=[['wukog',18,'monkey']['bajie',19,'pig']]
+  for (let stu of arr3){
+      for(let v of stu){
+        console.log(v)
+      }
+  }
+  let [[name, age, gender],obj] = array;
+  console.log(obj)
+</script>
+</html>

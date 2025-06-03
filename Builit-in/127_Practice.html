@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let reg = /([1][3-9][0-9])[0-9]{4}([0-9]{4})/g
+  let encrycode = 'dajsdh13715678903jasdlakdkjk13457890657djashdjka13811678908sdadadasd'
+  let decrycode 
+  // console.log(decrycode)
+  // decrycode = reg.exec(encrycode)
+  //  console.log(decrycode)
+  while(decrycode = reg.exec(encrycode)){
+    console.log('Phone number:'+decrycode[1] + "*"*4+decrycode(2))
+  }
+  let re=/^1[3-9]\d{9}$/
+  console.log(re.test('123123123132'))
+</script>
+</html>

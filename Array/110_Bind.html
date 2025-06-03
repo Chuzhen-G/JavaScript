@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    bind() is the method of function, can using to create a new function
+      -bind can binding "this" to new function
+      -bind can binding parameter to new function
+    Arrow function does not have its this, its this is determine by it outer layer
+      it can also not be editable by "call" "apply" or "bind"
+      Arrow function does not have arguments
+  */
+ function fn(a,b,c){
+  console.log('fn execute', this)
+  console.log(a,b,c)
+ }
+ const obj ={name:'wukong'}
+ const newFn = fn.bind(obj, 10, 20)
+ newFn()
+
+ const arrowFn =()=>{
+    console.log(arguments)
+ }
+ 
+ class MyClass{
+  fn=()=>{
+    console.log(this)
+  }
+ }
+ const mc = new MyClass()
+ mc.fn.bind(window)
+</script>
+</html>

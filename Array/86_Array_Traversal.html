@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //Any kind of value can become the elements in the array
+  const arr = [1,'hello',true,null,{name:'wukong'},()=>{}]
+  // When creating the array, we have to ensure the data type store in the array are same
+  arr = ['wukong','bajie','heshang']
+
+  /* 
+  Array traversal
+    -array traversal is to get every element in the array
+  
+  */
+//  for(let i = 0; i<arr; i++){
+//   console.log(arr[i])
+//  }
+  for(let i = arr.length-1; i>=0; i--){
+    console.log(arr[i])
+  }
+  class Person{
+    constructor(name, age){
+      this.name = name
+      this.age =age
+    }
+  }
+  const personArr = [new Person('Wukong',18), 
+  new Person('heshang', 18), new Person('honghaier',8)]
+  for(let i=0; i<personArr.length; i++){
+    if(personArr[i].age<18){
+      console.log(personArr[i],"under 18")
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const obj = {name:'wukong',age:18, gender:"male"};
+  // let {name,age,gender} = obj  //declare variable and in same time destructing object
+  let name, age,gender
+  ({name,age,gender} = obj)
+  let {address} = obj//return undefined if object don't have this property
+  // if don't using below pattern, then we need assign the match word in outside to the object
+  // The below pattern is same as to search keyword in the object and assign it to the value it behind
+  let{name:a, age:b, gender:c, address:d='huoguos'} = obj
+  console.log(name, age, gender)
+</script>
+</html>

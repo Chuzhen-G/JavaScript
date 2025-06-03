@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  /* 
+    According to different call method to the function, the value of this are also different:
+      1.using function form to call, this is window
+      2.using method form to call, this is the object who call method
+      3.in constructed method, this is the new object create
+      4.arrow function does not have this, it determine by its outside scope
+      5.The function call by "call" and "apply", the first parameter will become "this" in function
+  */
+ function fn(){
+  console.log(this)  
+ }
+ const obj ={name:'wukong',fn}
+ /* 
+  Besides using function() this form to call function, we can also using other method to call function
+    Such as using call() and apply() method to call function
+    function call()
+    function apply()
+    -call and apply beisdes to call function, they also can using to change this in the function
+    -the first parameters in call and apply will become "this" in the function
+    -Through using call method to call function, the real parameter of function will list one after another after first parameter
+    -Through using apply to call function, the parameters need to through a array to transform
+
+ */
+fn.call()//call function
+fn.apply()
+ function fn2(a,b){
+  console.log('a=', a, 'b=',b,this)
+ }
+ fn2.call(obj,1,2)
+</script>
+</html>

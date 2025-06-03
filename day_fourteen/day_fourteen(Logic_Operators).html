@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logic operations</title>
+</head>
+<body>
+  
+</body>
+<script>
+  console.log(!true);//false
+  console.log(!false);//true
+  console.log(!123);//false  any nonzero value are automatically transform to true
+  console.log(!0);//true  the zero value will automatically transform to false
+  console.log(!'abc');//false  any non-empty string will automatically change to true
+  console.log(!'');//true  the empty string will automatically change to false
+  // whether objects and arrays contain or not contains value,(because whether they have or not have value, they all have reference) they all will be transform to true
+  console.log(!{});//false
+  console.log(![]);//false
+  console.log(!{key:'abc'});//false
+  console.log(![1,2,3]);//false
+  if(123){}; //the 123 in here will change to the true, which is satisfied the conditions
+
+  //&&
+  console.log(true && false); //false
+  console.log(false && true); //false
+  console.log(false && false);//false
+  console.log(true && true); //true
+  console.log(123 && 0);//0
+  console.log(123 && 10+20);//30
+  console.log(123 && "abc");//abc
+  console.log(false && []);//false
+  console.log(0 && 'aaa');//0
+
+  //||
+  console.log(true || false); //true
+  console.log(false || true); //true
+  console.log(false || false);//false
+  console.log(true || true) //true
+  console.log(123 || 0);//123
+  console.log(123 || 10+20);//123
+  console.log(123 || "abc");//123
+  console.log(false || []);//[]
+  console.log(0 || 'aaa');//aaa
+
+  /*
+  *Short-circuit operation:
+			a.When in &&operators, if first operation value is false, then there is no need for calculate second operation value, the result will return false.
+			b.When in || operators, if first operation value is true, then there is no need for calculate second operation value, the result will return true.
+  *
+  * */
+//  let x = 100;
+//  let y = true && ++x
+//  y will be 101, since here have true at first, and one of the operation value is not logic value, so it will return second operation value
+//  console.log(x,y)//101 101
+
+//  let x = 100;
+//  let y = false && ++x
+// Here using short-circuit, since the first value is already false, it will not doing the evaluation for the ++x
+//  console.log(x,y)//100 false
+
+//  let x = 100;
+//  let y = false || ++x
+ console.log(x,y)//101 101
+
+ let x = 100;
+ let y = true || ++x
+// Here using short-circuit, since the first value is already true, it will not doing the evaluation for the ++x
+ console.log(x,y)//100 true
+</script>
+</html>

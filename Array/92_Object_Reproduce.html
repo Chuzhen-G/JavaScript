@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const arr=[{name:'wukong'},{name:'bajie'}]
+  const arr2 = arr.slice()
+  //console.log(arr === arr2)
+  /* 
+      ...(Expand Operator)
+        - Can expand element in one array tp another array or to be the parameter transform by function
+        -through it we can also doing shadow copy to array
+  */
+ const arr3 =["gege", ...arr,'jingjign']
+  function sum(a,b,c){
+    return a+b+c
+  }
+  const arr4 = [10,20,30]
+  let result=sum(...arr)
+  console.log(result)
+
+  /* 
+    Object reproduce
+      -Object.assign(target object, the object want copy)
+      -Copy the object we want to copy into the target object, and return target object
+    -we can also using expand operator to copy object
+  */
+ const obj = {name:'wukong',age:18}
+//  assign obj value to obj2
+ const obj2 = {address:'huoguos',age:28}
+ Object.assign(obj2, obj1)
+ const obj3={address:'gaolaoz',age:48,...obj}//expand the property of obj to new object
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    1. Most characters can directly write in the regular expression
+    2. | in rergular expression represent "or"
+    3. [] means (set of characters)
+      [a-z] arbitary Lowercase letter
+      [A-Z] arbitary Uppercase letter
+      [a-zA-z]arbitary letter
+      [0-9] arbitary number
+    4.[^] represent exclude(negation)
+      [^x] besides letter "x"
+    5. . represent any characters besides the break line signs
+    6.In regular expression using \ to do the escape character(it means our putting characters does not have other meaning)
+    7.other letter set
+      \w represent([a-zA-z0-9]) arbitary word
+      \W represent(^[a-zA-z0-9]) exclude word
+      \d represent([0-9])arbitary digits
+      \D represent([0-9])exclude digits
+      \s represent white space
+      \S represnet exclude white space
+      \b word boundary
+      \B exclude word boundary
+    8.begin and end
+      ^ means the start of string(can using to match start position character)
+      $ means the end of string(can using to match end position character)
+  */
+  let re = /a|b/
+  re = /[avbcdefg]/
+  re = /[a-zA-Z]/
+  re = /[a-z]/i //flag i represents ignore lower and upper case
+  re = /[^a-z]/ //to match the string that exculde lower case
+  re = /./
+  re=/\./
+  re=/\w/
+  re=/^a/ //match start position a
+  re=/a$/ // match end position a
+  re=/^a$/ // only match a, complete match, string must be same as the regular expression
+  re=/^abc$/
+  let result = re.test('a\|b-c')//true
+  result = re.test('acb')
+  console.log(result)
+</script>
+</html>

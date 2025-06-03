@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Object</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // method1
+  let obj1 = new Object();//This is to Create a empty object
+  // Below is to set the value, data or functions to this object
+  obj1.name = "zhangsan";
+  obj1.age=16;
+  obj1.fn=function(){
+    console.log(111111);
+  }
+  console.log(obj1);
+  // here is how to call its value and function that have been set
+  // using object_name.(the key or function name)
+  console.log(obj1.age);
+  obj1.fn();
+
+  // method2
+  let obj2 = new Object({//This is to initialze and direct set the key and function when create object
+    aa:'bb',
+    cc:true,
+    dd:123,
+    fn:function(){
+    console.log(1111111111);
+    }});
+  console.log(obj2);
+
+  // method3
+  let obj3 = {}; //Create a empty object
+  obj3.name = 'zhangsan';
+  obj3.age = 16;
+  obj3.fn = function(){
+    console.log(1111111111);
+  }
+  console.log(obj3);
+  conosle.log(obj3.name);
+  obj3.fn();
+
+  // method4
+  let obj4 = {//This is to initialze and direct set the key and function when create object
+    aa:'bb',
+    cc:true,
+    dd:123,
+    // if function have same name, it will like variable, the function at the latest will cover
+    // the original function. So, original function will not do anything.
+    fn1:function(){
+      console.log(11111111);
+    },
+    fn2:function(){
+      console.log(11111111);
+    }
+  };
+</script>
+</html>
