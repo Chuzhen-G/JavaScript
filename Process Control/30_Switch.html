@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch statement</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    switch statement
+      -Grammar:
+        switch (Expression){
+          case expression:
+            code...
+          case expression:
+            code...
+            break;
+          case expression:
+            code...
+          case expression:
+            code...
+            break;
+          default:
+            code...
+        }
+      -execute process
+        When execute switch statement, it will compare the expression after switch to expression after case.
+          if the compare result is true, then start from current case to execute code.
+          if the compare result is false, then continue to compare other expression after case, until find true
+      -Note:
+        When the compare result is true, it will start from current case to execute code
+          Which is same as say case is the start position for execute code
+          It means all the codes will be execute after current case 
+          But we can using break to avoid execute other case.
+        If here can not find any result that is true, then it will execute the statement after default.
+
+      Summary:
+        The funtion of switch and if are similar, if can do the things that switch can do
+          switch will be more concise when here have multiple conditions
+  */
+  let num = +prompt('please type a number');
+  /* 
+    1.one
+    2.two
+    3.three
+  */
+ if(num===1){
+  alert('one');
+ }else if(num===2){
+  alert('two');
+ }else if(num===3){
+  alert('three');
+ }
+ switch(num){
+  case 1:
+    alert('one');
+    break;//using break to end switch statement
+  case 2:
+    alert('two');
+    break;
+  case 3:
+    alert('three');
+    break;
+  default:
+    alert('four');
+    break;
+
+  
+ }
+</script>
+</html>

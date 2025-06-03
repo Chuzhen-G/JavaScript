@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Number</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let userin = prompt("please type the integer that greater than 1")
+  userin = parseInt(userin);
+  let flag = true;
+  if(!isNaN(userin)){
+    for(i = 2; i<userin;i++){
+      if(userin%i===0){
+        flag = false;
+      }
+    }
+  }
+  if(flag){
+    alert(`${num} is not a prime number`)
+
+  }else{
+    alert(`${userin}it is not a prime number`)
+
+  }
+</script>
+</html>

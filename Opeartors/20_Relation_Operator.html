@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relation Operator</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    relation operator
+      -relation operator is using to check if the relation between two value is satisfied
+        if satisfied return true, if not return false
+      >
+          -using to check if left side value is greater than right side value
+      >=
+          -using to check if left side value is greater than or equal right side value
+      <
+          -using to check if left side value is less than right side value
+      <=
+          -using to check if left side value is less than or equal right side value
+    Note: When doing relation operations in non-Number value, it will automatically convert it to number value then doing compare
+          When the both side in the realtion opeeration are string, it will compare the Unicode encode in the string from letter to letter
+          We can using this characteristic to ordering letters
+        Be careful to doing the type exchange when compare two string format numbers
+  */
+ let result = 10>5 // true
+ result = 5>5//false
+ result = 5>= 5//true
+ result = 5 < "5"//true
+ result = "5">false//true
+ result = 'a'<'b'//true
+ result = 'z'<'f'//false
+ result = 'abc'<'b'//true
+
+ result = "12" < '2'//true
+ result = +'12'< '2'//false
+
+ //check if num is between 5 and 10
+ let num = 6
+//  result = 5 < num < 10 wrong way of writing
+result = 5<num && num <10;
+ console.log(result)
+</script>
+</html>

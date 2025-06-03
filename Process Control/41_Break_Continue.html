@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+  <script>
+    /* 
+      break and contine
+        -break
+          -break is using to stop switch and loop statement
+          -when exeute break, the current switch and loop will stop immediately
+          -break will stop the break that nearst it
+        -continue
+          -continue using to skip current loop
+    */
+   for(let i=0; i<5; i++){
+    if(i===3){
+      continue
+    }
+   }
+   for(let i = 0; i < 5; i++){
+    console.log(i)
+    for(let j = 0; j<5;j++){
+      if(j===1) break
+      conosole.log(j);
+    }
+   }
+
+
+   for(let i = 0; i<5;i++){
+    if(i===3){
+      break;
+    }
+    console.log(i)
+   }
+  </script>
+</html>

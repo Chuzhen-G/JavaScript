@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Before adjustment:
+      1.10000: 290ms
+      2.100000: 28202ms
+    first adjustment:
+      1.10000: 31ms
+      2.100000:2331ms
+      3.1000000:
+  */
+  // set a timer(Can set a title name)
+  console.time('Prime Number practice')
+  for(let i =2; i<100; i++){
+    let flag = true;
+    for(let j = 2; j<i; j++){
+      if(i%j === 0){
+        flag = false;
+        break;
+      }
+    }
+    if(flag){
+      console.log(i)
+    }
+  }
+  // Stop the timer(must have same name to the set timer)
+  console.timeEnd('Prime Number practice')
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for loop</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    for loop
+      -for loop and while loop does not have intrinsic difference, both of them are using to execute code repeatedly
+      -Difference is their grammar structure, for loop is more clearly
+      -Grammar:
+        for(Initialize expression; conditional expression; update expression){
+          statement...
+        }
+      -Execute process:
+        1. execute initialize expression, initialize variable
+        2. execute conditional expression, make judgement to whether loop is execute(true execute, false end)
+        3. If result is true, then execute loop body
+        4. execute update exprerssion to modify the initilize variable
+        5. repeat step 2-4, until result to false.
+      -Initialize expresssion will only execute once in whole loop
+      -Three expression in the for loop can be omit
+      -The varaible declare by let in the for() is local variable, outside can not access it
+        but the variable declare by var in the for() can be access by outside
+      -The method to create infinity loop:
+        while(1){}
+        for(;;){}
+  */
+ for(let i = 0; i<5; i++){
+  console.log(i);
+ }
+
+ let i =0
+ for(;i<5;){
+  console.log(i)
+  i++
+ }
+</script>
+</html>

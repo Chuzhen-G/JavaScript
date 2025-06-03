@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let userinp = prompt('Please tell me XiaoMin"s grade')
+  if(isNaN(userinp) || userinp<0 || userinp>100){
+    console.log('Your input is not in corrent form')
+  }else if(+userinp===100){
+    console.log("Reward will be a BMW");
+  }else if(+userinp >= 80){
+    console.log("Reward is iphone")
+  }else if(+userinp >=60){
+    console.log('Reward is reference book')
+  }else{
+    console.log('son of bitch, no reward')
+  };
+</script>
+</html>

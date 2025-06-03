@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const rate = 1.05
+  let initMoney = 1000
+  let year = 0;
+  while(initMoney<1000){
+    initMoney*=rate;
+    year++;
+  }
+  console.log(`need to store ${year}, for ${initMoney}`);
+</script>
+</html>

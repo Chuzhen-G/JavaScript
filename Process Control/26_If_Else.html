@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    if-else statement
+    -Grammar:
+      if(conditional expression){
+          statement....
+      }else{
+          statement....
+      }
+    -execute process:
+      when if-else execute, it will first to make judgement to the conditional expression
+      if the result is true, it will execute the statement after if
+      if the result is false, it will execute the statement after else
+
+    if-else else-if statement:
+    -Grammar:
+      if(Condtional Expression){
+        statements.....
+      }else if(Conditional Expresion){
+        statements......
+      }else{
+        statements........ 
+      }
+    -execute process:
+      if-else else-if statement, it will make judgement to the conditional expression after if from top to down
+        of the conditional expression result in true, then execute the statement after current if, after execute then the statement will end.
+        if the conditional expression result in false, then it will continue to make judgement, until to find true, if all conditional expression are false,then execute the statement after else
+    Note: if-else else-if stament will only execute one code block
+          Once a block code is execute, the rest condition will not continue to make judgement
+          So, we need to be careful for the order we write
+  */
+ let age = 70;
+ if(age>=60){
+  alert('you are too old');
+ }else{
+  alert('you are too young')
+ }
+
+ if(age>=100){
+  alert('you are fuck long')
+ }else if(age>=80){
+  alert('you are short than you top')
+ }else if(age>=60){
+  alert('you are useless')
+ }else if(age>=30){
+  alert('you are piece of trash')
+ }else if(age>=18){
+  alert('you are young')
+ }else{
+  alert("Hello world")
+ }
+</script>
+</html>

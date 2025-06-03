@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+  <script>
+    let count = 0;
+    let hund = 0;
+    let tenth = 0;
+    let single = 0;
+    for(let i = 100; i<1000; i++){
+      hund = parseInt(i/100)
+      tenth = parseInt(i/10)%10
+      single = i%10;
+      if(i === Math.pow(hund,3)+Math.pow(tenth,3)+Math.pow(single,3)){
+        console.log(i);
+        count++;
+      }
+    }
+    for(let i=100; i<1000;i++){
+      let strI = i+''
+      if(strI[0]**3 + strI[1]**3 + strI[2]**3 === i){
+        console.log(i);
+      }
+    }
+    alert(count);
+  </script>
+</html>

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face{
+       font-family:'night';
+       src:url("../PROJECT/Font_Family/ShadowsIntoLight-Regular.ttf") format(opentype)
+    }
+    *{
+      
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    
+    #main{
+      overflow:hidden;
+      width:1000px;
+      height:576px;
+      margin:50px auto;
+      border: 5px solid rgb(0, 0, 0);
+      background: url(../PROJECT/Project_image/bgc.png) no-repeat;
+      background-size: cover;
+      border-radius: 10px;
+    }
+    #stage{
+      float:left;
+      overflow: hidden;
+      position: relative;
+      width:550px;
+      height:450px;
+      margin:50px auto;
+      padding:2px;
+      border:2px solid rgba(0, 0, 0, 0.981);
+      background: url(../PROJECT/Project_image/preview.webp) -60px -100px repeat;
+      background-size: 125%;
+      background-clip: border-box;
+      border-radius: 30px;
+      box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.821);
+    }
+    #hero{
+      position: absolute;
+      top:270px;
+      left:325px;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background-color:chartreuse;
+      background: url(../PROJECT/Project_image/character.png) no-repeat ;
+      scale:1.5;
+      background-size: contain;
+      transform: rotate(0deg);
+      z-index:1;
+    }
+    #weapon{
+      position:absolute;
+      top:20px;
+      left:-10px;
+      width:35px;
+      height:10px;
+      /* background:linear-gradient(to left,rgb(80, 184, 228) ,rgb(144, 203, 228), rgb(194, 219, 234)); */
+      border-radius: 50px 0 0 50px;
+      transform-origin: right;
+      transform:rotate(0deg);
+      /* transition:0.05s;dw */
+    }
+    #cover{
+      position:absolute;
+      top:22.5px;
+      left:22.5px;
+      width:5px;
+      height:5px;
+      /* background-color: chartreuse; */
+      border-radius: 50%;
+    }
+    .zombie{
+      position: absolute;
+      width:25px;
+      height:25px;
+      border-radius:50%;
+      background-color:rgb(255, 115, 0);
+      background:url(../PROJECT/Project_image/zombie.png) 0 0 no-repeat;
+      background-size:cover;
+      scale:2.5;
+      top:500px;
+      left:100px;
+      transition: 0.05s;
+      transform:rotate(0deg);
+      z-index:1;
+    }
+    .bullet{
+      position:absolute;
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background-color: black;
+      border:1px solid black;
+      transform-origin: right;
+      transform:translate(0, 0) ;
+      /* transition:1s ease; */
+      z-index:1
+    }
+    #score, #HP{
+
+      color:rgb(214, 104, 121);
+      display:flex;
+      flex-direction: column;
+      width:400px;
+      height:100px;
+      margin-top:100px;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #HPSlide{
+      width:300px;
+      height:25px;
+      overflow: hidden;
+      border:2px solid black;
+      border-radius: 20px;
+    }
+    span{
+      font-size: 50px;
+      font-family:'night';
+      font-weight: 700;
+    }
+    #controlHP{
+      width:300px;
+      height:25px;
+      background-color: rgb(209, 52, 52);
+      transform:translateX(0px);
+      transition:0.5s;
+      border-right:2px solid black;
+    }
+    .heal{
+      position:absolute;
+      width:65px;
+      height:65px;
+      top:0px;
+      left:0px;
+      opacity: 1;
+      transition: opacity 0.1s linear;
+      background:url(../PROJECT/Project_image/Gemini_Generated_Image_9qbqzu9qbqzu9qbq-removebg-preview.png);
+      background-size:contain;
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div id="stage">
+      <div id="hero">
+        <div id="weapon">
+        </div>
+         <div id="cover">
+         </div>
+      </div>
+      <div class="bullet"></div>
+      <div id="zombies">
+        <div class ='zombie'></div>
+      </div>
+      <div class="heal"></div>
+    </div>
+    <div id="info">
+      <div id="score"><span>Score:</span></div>
+      <div id="HP"><span>HP:</span>
+        <div id="HPSlide"><div id="controlHP"></div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const hero = document.getElementById('hero')
+    const stage = document.getElementById('stage')
+    const cover = document.getElementById('cover')
+    const weapon = document.getElementById('weapon')
+    const zombie = document.getElementsByClassName('zombie')
+    const zombies = document.getElementById('zombies')
+    const hp  = document.querySelector('#HP span')
+    const score = document.querySelector('#score span')
+    const hpSlide = document.querySelector('#controlHP')
+    let heal = document.getElementsByClassName('heal')[0]
+    let finalScore = 0
+    let detectKey = new Set()
+
+    // Create hero and zombie object extend to role, (HP, ATK)
+
+    class Role{
+      #hp
+      #atk
+      #xpos
+      #ypos
+      #width 
+      #height 
+      constructor(hp, atk, xpos, ypos, width, height){
+        this.#hp = hp;
+        this.#atk = atk;
+        this.#xpos = xpos;
+        this.#ypos = ypos;
+        this.width = width;
+        this.height = height;
+      }
+      get hp(){
+        return this.#hp;
+      }
+      set hp(hp){
+        this.#hp = hp;
+      }
+      get atk(){
+        return this.#atk;
+      }
+      get xpos(){
+        return this.#xpos;
+      }
+      set xpos(xpos){
+        this.#xpos = xpos
+      }
+      get ypos(){
+        return this.#ypos;
+      }
+      set ypos(ypos){
+        this.#ypos = ypos
+      }
+      get width(){
+        return this.#width
+      }
+      set width(width){
+        this.#width = width
+      }
+      get height(){
+        return this.#height
+      }
+      set height(height){
+        this.#height = height
+      }
+    }
+    class Heal{
+      #xpos
+      #ypos
+      #width 
+      #height 
+      #object
+      constructor(xpos,ypos, width, height, object){
+        this.#xpos = xpos
+        this.#ypos = ypos
+        this.#width = width
+        this.#height = height
+        this.#object = object
+      }
+      get xpos(){
+        return this.#xpos;
+      }
+      set xpos(xpos){
+        this.#xpos = xpos
+      }
+      get ypos(){
+        return this.#ypos;
+      }
+      set ypos(ypos){
+        this.#ypos = ypos
+      }
+      get width(){
+        return this.#width;
+      }
+      get object(){
+        return this.#object;
+      }
+      heal_cX(){
+        return this.#xpos+this.#width/2
+      }
+      heal_cY(){
+        return this.#ypos+this.#height/2
+      }
+    }
+    class Hero extends Role{
+      #hp
+      #atk
+      #xpos
+      #ypos
+      #width 
+      #height 
+      constructor(hp,atk,xpos,ypos, width, height){
+        super(hp,atk,xpos,ypos, width, height)
+      }
+      hero_cX(){
+        return this.xpos+this.width/2
+      }
+      hero_cY(){
+        return this.ypos+this.height/2
+      }
+    }
+   
+    class Zombie extends Role{
+      #hp
+      #atk
+      #xpos
+      #ypos
+      #width 
+      #height 
+      #currentzom
+      constructor(hp,atk,xpos,ypos,currentzom, width, height){
+        super(hp,atk,xpos,ypos, width, height)
+        this.#currentzom = currentzom
+      }
+      Zombie_cX(){
+        return this.xpos+this.width/2
+      }
+      Zombie_cY(){
+        return this.ypos+this.height/2
+      }
+    }
+    class Bullet{
+      #xpos
+      #ypos
+      #width
+      #height
+      constructor(xpos,ypos,width,height){
+        this.#xpos = xpos
+        this.#ypos = ypos
+        this.#width = width
+        this.#height = height
+      }
+      get xpos(){
+        return this.#xpos;
+      }
+      set xpos(xpos){
+        this.#xpos = xpos
+      }
+      get ypos(){
+        return this.#ypos;
+      }
+      set ypos(ypos){
+        this.#ypos = ypos
+      }
+      bullet_cX(){
+        return this.xpos+this.width/2
+      }
+      bullet_cY(){
+        return this.ypos+this.height/2
+      }
+    }
+    const heroObj = new Hero("100","10", hero.offsetLeft, hero.offsetTop, hero.offsetWidth, hero.offsetHeight)
+    let collect = 0;
+    let collected =false;
+    // adding all the key I have press down in the keyboard
+    document.addEventListener('keydown', event=>{
+      detectKey.add(event.key)
+      if(event.key==='x' && show){
+        collect+=4;
+        if(collect===100){
+          collected=true;
+        }
+      }else{
+        collect=0;
+      }
+    })
+
+    // if delete the key after keyup it will not get move, detect my key in the detectkey
+    // if all keyup, then detectkey have no key
+
+    document.addEventListener('keyup',event=>{
+      detectKey.delete(event.key)
+    })
+    let degree = 0;
+    stage.addEventListener('mousemove', event=>{
+      let rect = stage.getBoundingClientRect()
+      // minus the padding, plus the hero position, its cover position and width to get center for caculate the rotation
+      // The rect is the actual viewport place at the stage, and the event of y is not caculate from 0 at the stage, it is webpage,
+      // therefore we need using event y to minus stage place to get actual start position
+      let x_distance = heroObj.xpos+cover.offsetLeft + cover.offsetWidth/2-(event.x-parseInt(rect.left)-2)
+      let y_distance = heroObj.ypos+cover.offsetTop + cover.offsetHeight/2-(event.y-parseInt(rect.top)-2)
+      degree = Math.atan2(y_distance, x_distance)*180/Math.PI
+      if(y_distance<0){
+        degree +=360
+      }
+      weapon.style.transform = `rotate(${degree}deg)`
+    })
+
+
+    /* 
+      zombie navigate to hero and create new zombies
+    */
+  //  need work, further on the zombie outside screen, all zombie move to hero, attack hero, hero weapon shot
+    const zomObject = new Zombie("50","5", zombie[0].offsetLeft, zombie[0].offsetTop, zombie[0], zombie[0].offsetWidth, zombie[0].offsetHeight);
+    let zombarray = [zomObject]
+    function randomZombies(direction){
+      let dir = Math.floor(Math.random()*11)
+      let num;
+      
+      if(direction === 'top'){
+        switch (dir){
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:num =Math.floor(Math.random()*-100)-200; break;
+          case 5:
+          case 6:            
+          case 7:
+          case 8:
+          case 9:
+          case 10:num =Math.floor(Math.random()*50)+850; break;
+        }
+      }else{
+        switch (dir){
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:num = Math.floor(Math.random()*-100)-200; break;
+          case 5:
+          case 6:            
+          case 7:
+          case 8:
+          case 9:
+          case 10:num =Math.floor(Math.random()*50)+850; break;
+      }
+      }
+       return num;
+    }
+    let increaseDiffcult = 1;
+    setTimeout(function newZombies(){
+    const newZombie = document.createElement('div')
+     // adding to the class and html for style 
+    newZombie.classList.add('zombie') 
+    zombies.appendChild(newZombie)
+    // random
+
+    newZombie.style.top=randomZombies('top') + 'px'
+    newZombie.style.left=randomZombies('left') + 'px'
+
+    let zomNewObject = new Zombie("50","5", zombie[zombie.length-1].offsetLeft, zombie[zombie.length-1].offsetTop, 
+    zombie[zombie.length-1],zombie[zombie.length-1].offsetWidth, zombie[zombie.length-1].offsetHeight)
+    zombarray.push(zomNewObject);
+    // adding to the araay for simulate zombie behavior
+      
+
+    if(increaseDiffcult<9){
+      increaseDiffcult = Math.ceil(finalScore/10)
+    }
+    console.log(increaseDiffcult)
+      setTimeout(newZombies,5000-400*increaseDiffcult)
+   },5000)
+  // check if overlapping
+   function Overlapping(z1,x,y,z2){
+      // if(typeof z2===Bullet){
+      //         console.log(z1,x,y,z2)
+      // }
+      if(Math.sqrt(Math.pow((z1.Zombie_cX()-x),2)+ Math.pow((z1.Zombie_cY()-y),2))<=(z1.width+z2.width)/2){
+        return true;
+      }
+    return false;
+   }
+    let zombieTimer = setTimeout(function move(){
+      for(let i = 0; i<zombarray.length; i++){
+        let currentzom = zombarray[i];
+         if(Math.sqrt(Math.pow((heroObj.hero_cX()-currentzom.Zombie_cX()),2)+ Math.pow((heroObj.hero_cY()-currentzom.Zombie_cY()),2))>(heroObj.width/2+currentzom.width/2)){
+            
+            x_shift=currentzom.xpos+ 0.02*(heroObj.hero_cX()-currentzom.Zombie_cX())
+            y_shift=currentzom.ypos+ 0.02*(heroObj.hero_cY()-currentzom.Zombie_cY())
+            //0.05*(heroObj.hero_cY()-currentzom.Zombie_cY())
+            x_center = x_shift+currentzom.width/2
+            y_center = y_shift+currentzom.height/2
+            // please change to false---------------------------------------------------------------------
+            let overlap = false;
+            
+            for(let j=0; j<zombarray.length;j++){
+              // don't need comapre to self
+              if(i!=j){ 
+                // if overlap, then set overlap condition
+                if( Overlapping(zombarray[j],x_center, y_center,zombarray[i])) {
+                   overlap = true;
+                   break;
+                }
+              }
+            }
+            // if overlap then don't add new position
+            if(!overlap && zombie[i]){
+                let x_distance = heroObj.xpos+cover.offsetLeft + cover.offsetWidth/2-(currentzom.xpos)
+                let y_distance = heroObj.ypos+cover.offsetTop + cover.offsetHeight/2-(currentzom.ypos)
+                let zombiedegree = Math.atan2(y_distance, x_distance)*180/Math.PI
+                if(y_distance<0){
+                  zombiedegree +=360
+                }
+               zombie[i].style.transform=`rotate(${zombiedegree}deg)`
+               currentzom.xpos =  x_shift
+               currentzom.ypos =  y_shift
+               zombie[i].style.left= currentzom.xpos +'px';
+               zombie[i].style.top = currentzom.ypos +'px';
+            }
+        }
+      }
+     
+      setTimeout(move, 50)
+    },50)
+
+
+
+    function reCacualteMove(obj, dir, objClass){
+      if(dir === "top"){
+        obj.style[dir]= objClass.ypos+'px'
+      }else if(dir === 'left'){
+        obj.style[dir]= objClass.xpos+'px'
+      }
+    }
+    let lose = false;
+    let timer = 0;
+    // check the key 10millisecond a time, and with how much shifts
+    let keyTimer = setTimeout(function move(){
+      let x = heroObj.xpos;
+      let y = heroObj.ypos;
+      let flag = false
+      
+      if(detectKey.has('w')&&y>0){
+        heroObj.ypos -= 5
+      }
+      if(detectKey.has('a')&&x>0){
+        heroObj.xpos -= 5
+      }
+      if(detectKey.has('s')&&(stage.offsetHeight-y-heroObj.height)>10){
+        heroObj.ypos +=  5
+      }
+      if(detectKey.has('d')&&(stage.offsetWidth-x-heroObj.width)>10){
+        heroObj.xpos +=  5
+      }
+      for(let i = 0; i<zombarray.length; i++){
+        let currentzom = zombarray[i];
+        
+        if(Overlapping(zombarray[i],heroObj.hero_cX(), heroObj.hero_cY(), heroObj)){
+          flag = true;
+        }
+      }
+      hero.style.transform=`rotate(${180+degree}deg)`
+      if(!flag){
+        reCacualteMove(hero,'top',heroObj)
+        reCacualteMove(hero,'left',heroObj)
+      }else{
+        heroObj.xpos = x;
+        heroObj.ypos = y;
+      }
+      // console.log(timer)
+      let heroHp = setTimeout(function hpCaculate(){
+
+        if(flag){
+          if(!timer){
+            if(heroObj.hp !== 0){
+              heroObj.hp -= 5
+            }else{
+              lose=true;
+            }
+          }
+          timer+=zombarray.length*2
+          if(timer>=500){
+            timer=0
+          }
+          flag=false
+          return
+        }else{
+          timer=0
+          return
+        }
+        setTimeout(hpCaculate,100)
+      },100)
+      setTimeout(move,25)
+    },25)
+
+    
+    function fireBullets(){
+      let standardDeg, rad,access
+      let fireBullet;
+      let bulletx = 0,bullety = 0;
+      // adding new bullets
+      let newBullet=document.createElement('div')
+      newBullet.classList.add('bullet')
+      stage.appendChild(newBullet)
+
+      //new bullets positions
+      newBullet.style.top=heroObj.hero_cY()-2 +'px'
+      newBullet.style.left=heroObj.hero_cX()-2 + 'px'
+      fireBullet = new Bullet()
+      fireBullet.xpos=parseInt(newBullet.style.left);
+      fireBullet.ypos=parseInt(newBullet.style.top);
+      fireBullet.width = newBullet.offsetWidth
+      fireBullet.height = newBullet.offsetHeight
+      // Defining the bullet degree
+      standardDeg = degree-180;
+      rad = standardDeg * Math.PI / 180;
+      
+      bulletmove(standardDeg,bulletx,bullety,newBullet,fireBullet,rad)
+    }
+    /* 
+      Here can't directly put the bulletmove in the fireBullets because it will form a closure,
+      when using the settimeout in the firebullets, its parameter have one function, therfore it will
+      get remembered the variable state, and which if the variable at the global changed, it will affect their inside
+      (From another way to realize it is we only have one timer in a same function, when we call function it will not 
+      produce a new timer, if it is in it, but will change the thing at the timer)
+
+      // but in here we create another function, which allow call function to make new function, each new function have timer
+    */
+  //  
+    function bulletmove(standardDeg,bulletx,bullety,newBullet,fireBullet,rad){
+      let bull = setTimeout(function bulletTime(){
+          bulletx += Math.cos(rad) * 2;
+          bullety += Math.sin(rad) * 2;
+          let flag = true;
+          newBullet.style.transform=` translate(${bulletx}px, ${bullety}px) `
+          fireBullet.xpos+=Math.cos(rad) * 2;
+          fireBullet.ypos+=Math.sin(rad) * 2;
+          for(let i=0; i<zombarray.length; i++){
+            let currentzom = zombarray[i];
+            if(Overlapping(zombarray[i],fireBullet.bullet_cX(), fireBullet.bullet_cY(),fireBullet)){
+              flag = false;
+              zombarray[i].hp-=10;
+              newBullet.remove()
+              
+              if(zombarray[i].hp===0){
+                zombarray.splice(i,1)
+                zombie[i].remove()
+                finalScore++;
+              }
+              // can't using cleartimeout at here, since it is a loop, it will only stop outside settimeout, but the 
+              // bottom settimeout still execute so have next loop, using return can directly return function result with immediately break
+              return
+            }
+          }
+          if(flag){
+            if(fireBullet.xpos<0||fireBullet.xpos>540||fireBullet.ypos<0||fireBullet.ypos>450){
+            newBullet.remove()
+            return
+          }
+          }
+          setTimeout(bulletTime,5)
+        },5)
+    }
+
+    // let bulletFiretime = 0
+    stage.addEventListener('mousedown', event=>{        
+        fireBullets()
+    })
+    setTimeout(function inforshowing(){
+      hp.innerText=`HP: ${heroObj.hp}`
+      score.innerText=`Score: ${finalScore}`
+      hpSlide.style.transform = `translateX(${-(100-heroObj.hp)*3}px)`
+      if(lose){
+        confirm('You Get Lose')
+        location.reload()
+      }
+      setTimeout(inforshowing,100)
+    },100)
+
+    function randomHealer(direction){
+      let num;
+      
+      if(direction === 'top'){
+       num = Math.floor(Math.random()*300)+25
+      }else{
+        num=Math.floor(Math.random()*400)+25
+      }
+      
+       return num;
+    }
+
+
+    let healObj = new Heal(heal.offsetTop,heal.offsetLeft,heal.offsetWidth,heal.offsetHeight,heal)
+    let show = true;
+    let delay = true;
+    let delayTimer = 0;
+    function setdelay(){
+      let time = setTimeout(function delayTime(){
+          delayTimer+=1
+          // console.log(delayTimer)
+          if(delayTimer>=500){
+            delayTimer = 0;
+            delay=true;
+          }
+          setTimeout(delayTime,50) 
+        },50)
+    }
+    setTimeout(function produce(){
+      let h;
+      if(healObj===null&&delay){
+        h = document.createElement('div')
+        h.classList.add('heal')
+        stage.appendChild(h);
+        h.style.top=randomHealer('top')+'px'
+        h.style.left=randomHealer('left')+'px'
+        let randomImage = Math.floor(Math.random()*4)
+        healObj = new Heal(h.offsetLeft,h.offsetTop,h.offsetWidth,h.offsetHeight,h)
+        switch(randomImage){
+          case 0:healObj.object.style.background = `url('../PROJECT/Project_image/Gemini_Generated_Image_9qbqzu9qbqzu9qbq-removebg-preview.png') no-repeat center/contain`;break
+          case 1:healObj.object.style.background = `url('../PROJECT/Project_image/Gemini_Generated_Image_mpb1t5mpb1t5mpb1-removebg-preview.png') no-repeat center/contain`;break
+          case 2:healObj.object.style.background = `url('../PROJECT/Project_image/Gemini_Generated_Image_q6xpe4q6xpe4q6xp-removebg-preview.png') no-repeat center/contain`;break
+          case 3:healObj.object.style.background = `url('../PROJECT/Project_image/Gemini_Generated_Image_q6xpe5q6xpe5q6xp-removebg-preview.png') no-repeat center/contain`;break
+        }
+        show = true;
+      }
+      // console.log(healObj)
+      if(show&&healObj&&healObj.object){
+        // console.log(`${1-0.01*collect}`)
+        healObj.object.style.opacity=`${1-0.01*collect}`
+      }
+      setTimeout(produce,50)
+    },50)
+    setTimeout(function healer(){
+      // console.log(Math.sqrt(Math.pow((heroObj.hero_cX()-healObj.heal_cX()),2)+ Math.pow((heroObj.hero_cY()-healObj.heal_cY()),2)),(heroObj.width+healObj.width)/2)
+      if(collected&&delay&&show&&Math.sqrt(Math.pow((heroObj.hero_cX()-healObj.heal_cX()),2)+ Math.pow((heroObj.hero_cY()-healObj.heal_cY()),2))<=(heroObj.width+healObj.width)/2){
+        healObj.object.remove()
+        healObj=null
+        show=false;
+        delay=false;
+        collected=false;
+        heroObj.hp=parseInt(heroObj.hp)+20;
+        if(parseInt(heroObj.hp)>100){
+          heroObj.hp=100
+        }
+        setdelay();
+      }
+      setTimeout(healer,50)
+    },50)
+  </script>
+</body>
+</html>

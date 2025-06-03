@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*  
+    Embed loop into another loop
+
+    Print the pattern in the below to webpage
+      *****
+      *****
+      *****
+      *****
+      *****
+
+      *
+      **
+      ***
+      ****
+      *****
+
+      *****
+      ****
+      ***
+      **
+      *
+      When the loop is nested, as the outside loop execute once, the inner loop will execute a full circle
+  */
+//  Using to control height of shape
+ for(let i = 0;i<5;i++){
+  //Create a inner loop to control the width of shape
+  for(let j = 0; j<i;j++){
+    document.write("*");
+  }
+  document.write("<br/>")
+ }
+
+
+</script>
+</html>

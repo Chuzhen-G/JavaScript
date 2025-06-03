@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Value Operator</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Set value operator is to assign a value to a varible
+      =
+        -to set the value in the right side of symbol to the left side variable
+      ??=
+        -null set value operator
+        -only will set value when variable is null or undefined.
+      += a+=n same as a=a+n
+      -= a+=n same as a=a-n
+      *= a+=n same as a=a*n
+      /= a+=n same as a=a/n
+      %= a+=n same as a=a%n
+      **= a+=n same as a=a**n
+  */
+ let a = 10;
+ a = 5 //to set right side value to the left side varible
+ let b = a; //a variable will only be "varible" when it is in left side of =, when it is in right side of =, it will be "value"
+ a=b
+ a = 66;
+ a + 11;//most operators will not change the value of variable
+ a= a + 11;//but set value operator is the exception.
+ a = 6
+ a = a + 5 //10
+ a+=5; // in the base of a to increase 5
+
+ a=null
+ a??=101
+ consoole.log(a)
+</script>
+</html>

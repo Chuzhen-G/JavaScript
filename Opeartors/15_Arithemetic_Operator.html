@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    Operator
+      -Operator can be using for doing the operation for one or more opeartion value
+      -Arithemetic Operator:
+        +Adding operator
+        -Minus operator
+        *Multiply operator
+        /Division operator
+        ** Power operator
+        % Mod operator(Remainder)
+      
+      -Note:
+        -In arithemetic Operator, besides the adding in the string,
+          The other kind arthemetic operation will exchange the non-Number to a number then doing the operations
+      */
+ let a = 1+1;
+ a = 10 - 5
+ a = 2 * 4
+ a = 10 / 5
+ a = 10 / 3
+ a = 10 / 0//Infinity
+ a = 10 ** 4
+ a = 9 ** 0.5
+ a = 10 % 2
+ a = 10 % 3
+ a = 10 % 4
+
+/* 
+  JS is a looseness language, when doing the operation it wil automatically doing type exchange to perfom the operation
+*/
+ a = 10 - '5'
+ a = 10 + true// 10 + 1
+ a = 5 + null //5 + 0
+ a = 6 - undefined //6 - NaN
+
+ /* 
+  Every value when doing the adding operation, it will first convert other value to string, then doing connect string operation
+  We can using this characteristic to doing the type exchange
+    We can through using (Any kind + empty String) to convert it to the string
+    The principle is same as String function(), but the using will be more concise
+ */
+ a = 1+'2' // "1" +"2"
+ a = 'Hello ' + ' World'
+
+ a = true
+ a = true +''
+ console.log(typeof a, a);
+</script>
+</html>

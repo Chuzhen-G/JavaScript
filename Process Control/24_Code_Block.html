@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  /* 
+    using {} to create code lock, code block can using to group codes
+    The code in same code block are same group of codes, the code in code block either execute all or not execute
+    "let" and "var"
+      -In JS, the varaible declare by let are having block scope
+        the variable declare in the code block can't be access by the outside of code block
+      -In JS, the variable declare by var does not having block scope
+  */
+ {
+  let a =10
+  console.log(a)
+  var u =5
+ }
+ console.log(u)
+ console.log(a)
+ {
+  console.log('hh')
+  document.write("xixi")
+ }
+ 
+</script>
+</html>

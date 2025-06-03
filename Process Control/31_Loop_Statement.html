@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Loop statement
+      -Through using loop statement, it can let the specify codes to execute repeatedly
+      -JS have three kind loop statement
+        while statement
+        do-while statement
+        for statement
+      -while statement
+        -Grammar:
+          while(condiitonal expression){
+            statement...
+          }
+        -Execute process:
+          when while statement is execute, it will first to make judgement to conditional expression
+          if result is true, then execute loop body, after execute continual to make judegement
+          it will only stop when conditional expression evaluate false
+  */
+ // when the conditional expression is always true, it will be infinity true, (Becareful using)
+ /* 
+  Three requirement for a loop
+    1.initialize expression(initialize variable)
+    2.conditional expression(set the condition that will execute loop)
+    3.update expression(update initalize variable)
+ 
+ */
+  //initialize expression
+  let a =0;
+  //conditional expression
+  while(a<5){
+    console.log(a);
+    //update expression
+    a++;
+  }
+
+  let i = 0;
+  while(1){
+    console.log(i)
+    i++;
+    if(i===5){
+      break;
+    }
+  }
+</script>
+</html>

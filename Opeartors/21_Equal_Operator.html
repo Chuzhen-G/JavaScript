@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+     ==
+      -equal operator, using to compare if two value are equal
+      -when using equal operator to compare two distinct type value, it will change them to same type(Usually to number) then doing compare
+      -If the value are same after type exchange, it will also return true
+      -When null and undefined doing equal operator compare, they will return true
+      -NaN is not equal to any number, include itself
+     ===
+      -all equal operator, using to copare if two value are same
+      -It will not doing the automatic type exchange, if two value have different type, it will return false
+      -When null and undefined doing all equal operator compare, they will return false
+    
+    !=
+      -check not equal, using to check whether two value are not equal
+      -Will doing automatically type exchange
+    !==
+      -check not all equal, using to check whether two value are not all equal
+      -Will not doing automatically type change
+  */
+
+ let result = 1 == 1; //true
+ result = 1==2 //false
+ result = 1=="1"//true
+ result = true =="1"//true
+ result = null == undefined//true
+ result = NaN == NaN//false
+
+ result = 1==="1"//false
+ resiult = null === undefine//false
+
+ result = 1!=1 //false
+ result = 1!='1' //false
+ result = 1!=='1' //true
+ console.log(result);
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logic Operator</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    !logic not
+      -! can using to do a "not" operation to a value
+      -It can using to doing the take opposite operation to the boolean value
+        true->false
+        false->true
+      -If doing take opposite operation to the non-Boolean value, it will first convert it to the Boolean value then doingt the operation 
+          we can using this characteristic to change other kind type to boolean value
+      -Type Exchange
+        Exchange to String
+          Explicit Convert
+            String()
+          Implicit Convert
+            + ""
+        Exchange to Number
+          Explicit Convert
+            Number()
+          Implicit Convert
+            +
+        Exchange to Boolean
+          Explicit Convert
+            Boolean()
+          Implicit Convert
+            !!
+    &&logic and
+      - Can doing the "and" operation to two value
+      - When both left and right of && are true, it will return true, otherwise return false;
+      - "and" operation have short circuit, if first value is false, then it will not look second value
+      - "and" operation is find false, if find false then directly return, if no false then return true
+      - When using non-boolean value to doing the operation, it will convert to boolean value then doing operation
+        but it will return the original value
+        -if first value is false, then directly return first value,
+          if first value is true, then return second value
+    ||logic or
+      -Can doing the "or" operation to two value
+      -When left or right of && having true, then it will return true, otherwise return false
+      -"or" operation have short circuit, if first value is true, then it will not look second value
+      -"or" operation is find true, if find true then directly return, if no true then return flase
+      -When using non-boolean value to doing the operation, it will convert to boolean value then doing operation
+        but it will return the original value
+        -if first value is true, then directly return first value,
+          if first value is false, then return second value
+  */
+ let a = NaN;
+ a =!a
+ console.log(a)
+
+ a = 123
+ a = !!a//Same as Boolean(a)
+ console.log(typeof a, a)
+
+ let result = true &&true//true
+ result = true && false//false
+ reuslt =false && true//false
+
+ false&&alert(123)//first value is false, alert will not execute
+
+ //true && true -->true
+ result = 1 && 2 //2
+ //true && false -->false
+ result = 1 && 0 //0
+ //false && false -->false
+ result = 0 &&NaN//0
+
+
+
+ result = true ||false//true
+ result = false||true//true
+ result = true||true//true
+ result =false||false//false
+
+ true||alert(123)//first value is true, alert will not execute
+
+ result=1||2//1
+ result='hellp'||NaN //'hellp'
+ result=NaN||1//1
+ result=NaN||NaN
+
+ console.log(result)
+</script>
+</html>

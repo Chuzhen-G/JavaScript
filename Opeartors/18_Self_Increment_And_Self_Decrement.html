@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    ++ self increment operator
+      -++ after using it, it will let the original variable increment by 1
+      -self increment is separate to front increment(++a) and back increment(a++)
+      -whether is ++a or a++, they all will make original variable increment by 1 immediately
+      -The difference is the value return by ++a and a++.
+        a++ will return the value before increment, original value
+        ++a will return the value after increment, new value
+    
+  */
+ let a = 10;
+ let b = a++;
+ console.log('a++ = ', b)
+
+ b = ++a;
+ console.log('++a = ' ,b)
+ console.log(a)
+
+ let n = 5
+ let result = n++ + ++n + n
+ console.log(n);
+
+ /* 
+    ++ self increment operator
+      -++ after using it, it will let the original variable decrement by 1
+      -self increment is separate to front decrement(--a) and back decrement(a--)
+      -whether is -- or a--, they all will make original variable decrement by 1 immediately
+      -The difference is the value return by --a and a--.
+        a-- will return the value before decrement, original value
+        --a will return the value after decrement, new value
+    
+  */
+ a = 5;
+//  console.log('--a', --a)
+ console.log('a--', a--)
+ console.log(a)
+</script>
+</html>
