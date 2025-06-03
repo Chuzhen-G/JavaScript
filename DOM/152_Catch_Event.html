@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width: 300px;
+      height: 300px;
+      background-color: greenyellow;
+    }
+    #box2{
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+    #box3{
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">
+    <div id="box2">
+      <div id="box3"></div>
+    </div>
+  </div>
+  <script>
+    /* 
+      Event propagation function
+        -In DOM, the propagation of event can separate to threee stage
+          1.Catch stage (From ancestor element to the target element to doing the catch of event)(default situation: event will not occur in the catch stage)
+          2.Target stage {Object of trigger}
+          3.Buble stage (From target element to the ancestor element to doing the propagation of event)
+        -Catch of event, it meaans the propagation of event from out to inside
+          when our current element is trigger event, then it will start the biggest ancestor element of current element to doing the catch of event to the current element 
+        -If we want to trigger event at the catch stage, we can set true in the third parameter of addEventListener
+          generally we don't want event is trigger at the catch stage, so in general we don't need set third parameter
+    */
+    const box1 = document.getElementById('box1')
+    const box2 = document.getElementById('box2')
+    const box3 = document.getElementById('box3')
+
+    box1.addEventListener('click', event=>{
+      event.stopPropagation()
+      alert('1'+event.evenPhase)//evenPhase represent the stage of event trigger
+      //return 0 1 2 3
+      //0 means not occur event
+      //1 means catch stage
+      //2 means target stage
+      //3 means bubble stage
+    }, true)
+    box2.addEventListener('click', event=>{
+      alert(2)
+    }, true)
+    box3.addEventListener('click', event=>{
+      alert(3)
+    }, true)
+  </script>
+</body>
+</html>

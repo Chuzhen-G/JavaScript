@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1{
+      width:200px;
+      height:200px;
+      background-color: #bfa;
+    }
+    .box2{
+      background-color: yellow;
+      width:300px;
+      height:500px;
+      border:10px red solid
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">click me</button>
+  <hr>
+  <div class="box1"></div>
+</body>
+<script>
+  /* 
+    after click button, change the width of box1
+  */
+ const btn = document.getElementById('btn')
+ const box1 = document.querySelector('.box1')
+ btn.addEventListener('click', ()=>{
+  //change box1 style
+  //Besides directly change style, we can also through class property to change the style
+  /* 
+    Benefit to change style by class
+      1.can change multiple style at once
+      2.Separate JS and CSS
+  */
+  // box1.className += ' box2'
+  // element.classList is an object, this object offer many operations to the class of current element
+  /*  
+    element.classList.add() adding one or multiple class to the element
+    element.classList.remove() remove one or multiple class to the element
+    element.classList.toggle() switch the class at the element
+    element.classList.replace() replace the original class by new class
+    element.classList.contains() check if box1 contains specific class.
+  */
+  box1.classList.add('box2','box3','box4')
+  box1.classList.remove('box2','box4')
+
+  box1.classList.toggle('box2')
+  box1.classList.replace('box1','box2')
+  box1.classList.contains('box1')
+ })
+</script>
+</html>

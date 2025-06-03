@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer{
+      background:640px;
+      margin:50px auto;
+      text-align: center;
+    }
+  </style>
+  <script>
+    window.onload = ()=>{
+      /* 
+        click button change photo
+      */
+     const image = document.getElementsByTagName('img')[0]
+     const prev = document.getElementById('prev')
+     const next = document.getElementById('next')
+     const info = document.getElementById('info')
+     const autob = document.getElementById('auto')
+     const imgArr = [src="../../Real_Case(Newman)/day_eleven/Images/product2.png",src="../../Real_Case(Newman)/day_eleven/Images/product3.png",src="../../Real_Case(Newman)/day_eleven/Images/product4.png",src="../../Real_Case(Newman)/day_eleven/Images/product5.png"]
+     let current=0
+     info.innerText=`Total ${imgArr.length} photo, current ${current+1}`
+
+     next.addEventListener("click", ()=>{
+       clearTimeout(timer);
+      current++
+      if(current===imgArr.length){
+        current = 0;
+      }
+      image.src=imgArr[current]
+      info.innerText=`Total ${imgArr.length} photo, current ${current+1}`
+     })
+     prev.addEventListener("click",()=>{
+       clearTimeout(timer);
+      current--
+      if(current===-1){
+        current = imgArr.length-1;
+      }
+      image.src=imgArr[current]
+      info.innerText=`Total ${imgArr.length} photo, current ${current+1}`
+
+     })
+     let timer;
+     autob.addEventListener('click', ()=>{
+      clearTimeout(timer);
+      timer = setTimeout(function fn(){
+      next.dispatchEvent(new Event('click'))
+      setTimeout(fn,2000)
+     },2000)
+     }) 
+    }
+  </script>
+</head>
+<body>
+  <div class="outer">
+    <p id="info">
+      Total n photo, current m
+    </p>
+    <div class="img-wrapper">
+      <!-- <img src="../../Real_Case(Newman)/day_eleven/Images/product2.png" alt=""> -->
+      <img src="../../Real_Case(Newman)/day_eleven/Images/product2.png" alt="product">
+    </div>
+      <div class="btn-wrapper">
+        <button id="prev">Previous</button>
+        <button id="auto">Auto</button>
+        <button id="next">Next</button>
+      </div>
+  </div>
+</body>
+</html>

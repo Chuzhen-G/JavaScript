@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Chain scope
+      -When we using one variable,
+        JS Interpretor will first search variable in current scope.
+          if found then directly use
+          if not found then search in outward code block
+          if continue not found, then continue search outward......
+          If it is still not found until to global scope, then will have error, xxx is not defined
+  */
+  let a = 10;
+  {
+    let a ="a of first block code"
+    {
+      let a = "a of second block code"
+      console.log(a)
+    }
+  }
+
+  let b = 33
+  function fn(){
+    console.log(b)
+    let b= 44
+    function f1(){
+      let b =55
+      console.log(b)
+    }
+  }
+</script>
+</html>

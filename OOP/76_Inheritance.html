@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Inheritance
+      -Through inheritance, it allows we can expand class without changing it
+      -OCP open/close principle
+        -program should close edit, but open extends
+  */
+  class Animal{
+    constructor(name){
+      this.name=name
+    }
+    sayHello(){
+      console.log('Animal sounds')
+    }
+  }
+  class Dog extends Animal{
+    // In child class, we can through create same name method to overriding the method in the parent class
+    sayHello(){
+      console.log('hhhhh')
+    }
+  }
+  class Cat extends Animal{
+    //Overriding constructor function
+    constructor(name,age){
+      //When overriding constructor function, the first line of constructor function must be super()
+      super(name)//call the constructor function of parent class
+      this.age=age;
+    };
+    sayHello(){
+      super.sayHello()//in method we can using super to call the method of parent class
+      console.log('mmmmm')
+    };
+  }
+  class Snake extends Animal{
+    sayHello(){
+      console.log('ssssss')
+    }
+  }
+  const dog = new Dog('wancai')
+  const cat = new Cat('tom',8)
+  cat.sayHello()
+</script>
+</html>

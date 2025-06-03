@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input disabled="disabled" type="text" name="username" value="admin">
+  <script>
+    /* 
+      Attribute Node(Attr)
+        -It is also an object at DOM, usually don't need to get object, we can through elements to doing the operation to it
+        -how to operate attribute node:
+          method 1:
+            read: element.property_name(note, class property need to using className to read)
+              read a boolean value, it will return true or false(give a true or false when modify)
+            modify:element.property_name=property_value
+          method2:
+            read: element.getAttribute(property_name)
+            modify: element.setAttribute(property_name, property value)
+            delete: element.removeAttribute(property_name)
+    */
+   const input = document.getElementByName('username')[0]
+   input = document.querySelector('[name=username]')
+   input.type
+   input.value
+   input.text
+   input.className//Reserve name(class)
+   console.log(input.getAttribute('type'))
+   input.setAttribute('type', 'wukong')
+  </script>
+</body>
+</html>

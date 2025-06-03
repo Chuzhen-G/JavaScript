@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  class Person{
+    name = 'wukong'
+    sayHello = function(){
+
+    }// a way of adding method
+    greet(){//(entity method), the "this" in entity method will be this entity
+      console.log('hahaha ' + this.name)
+    }//can't be seem on the object
+    static test(){
+      console.log('I am static method' + this)//the this at here is Person,(in static method, "this" is point to the class)
+    }//static method(class method) Using class to call
+  }
+  const p1 =new Person()
+
+  console.log(p1)
+  p1.greet();
+  Person.test();
+</script>
+</html>

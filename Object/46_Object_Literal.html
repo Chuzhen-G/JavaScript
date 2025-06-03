@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Object literals:
+      -Can directly using {} to create an object
+      -Using the {} to create object, we can directly adding property in it
+      -Grammar:
+        {
+          property name: propety value,
+          ['property name']:property value
+        }
+  
+  */
+  let obj = Object();
+  let mySymbol = Symbol()
+  let obj2 = {
+    name:"uuu",
+    age:18,
+    ['gender']:'male',
+    [mySymbol]:'property',
+    hello:{
+      a:1,
+      b:true
+    }
+  }
+  obj2.name = 'wukong'
+
+</script>
+</html>

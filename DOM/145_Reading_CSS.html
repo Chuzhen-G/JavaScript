@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .box1{
+        width:200px;
+        height:200px;
+        background-color: #bfa !important;
+        transition:width, 2s;
+      }
+      .box1::after{
+        content:'hello';
+        background-color: #255 0 0;
+      }
+  </style>
+</head>
+<body>
+  <button id="btn">Click me</button>
+  <hr>
+  <div class="box1" style="width:300px"></div>
+</body>
+<script>
+  /* 
+    after click button, read the css format of elements
+  */
+ const btn = document.getElementById('btn')
+ const box1 = document.querySelector('.box1')
+ btn.addEventListener('click', ()=>{
+  // box1.style.width(can only read the style directly in the tags)
+  /* 
+    getComputedStyle()
+      -it will return an object, this object will contain all the style that effective in the current elements(all style current use)
+      -parameter:
+        1.The specific object that we want to get style
+        2.The pseudo-element we want to get
+      -return value:
+        return an object, the object store the style for the current elements
+      -Note:
+        the return style value of this style object is not always are be directly use to doing caculation
+          When use it we need ensure its value can be use
+  */
+  const styleObj = getComputedStyle(box1)
+  // can using parse int to find the integer for the style that can use to computed
+  console.log(parseInt(styleObj.width)+ 100)
+  box1.style.width = parseInt(styleObj.width)+ 100+'px'
+  console.log(styleObj.backgroundColor)
+  //get the style of object pseudo-element
+  styleObj = getComputedStyle(box1, '::after')
+ })
+</script>
+</html>

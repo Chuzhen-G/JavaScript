@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    In early JS, we are using function to define class
+      -if a function is directly call xxx(), then it is a normal function
+      -if a fucntion is through using new to call new xxx(), then this function is constructed function
+  */
+
+   /* 
+   Same as :
+    class Person{
+    }
+   */
+   var Person = (function(){function Person(name,age){
+  //In consturct function, this refer to the new create object
+  this.name = name,
+  this.age = age
+
+  // this.sayHello = function(){
+  //   console.log(this.name)
+  // }
+ }
+//  Adding the property(method) to prototype
+
+  Person.prototype.sayHello = function(){
+    console.log(this.name)
+  }
+  //Static property
+  Person.staticProperty='xxx'
+  //Static method
+  Person.staticMethod =function(){
+
+  return Person
+  }})()
+ 
+ class MyClass{
+
+ }
+ const p = new Person()
+ console.log(p)
+
+ var Animal = (function(){
+  function Animal(){
+
+  }
+  return Animal
+ })()
+ var Cat = (function(){
+  function Cat(){
+
+  }
+  //Inheritcance Animal
+  Cat.prototype = new Animal;
+  return Cat
+ })( )
+ console.log(cat)
+</script>
+</html>

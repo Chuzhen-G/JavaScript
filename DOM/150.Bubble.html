@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width:100px;
+      height:100px;
+      background-color: greenyellow;
+      border-radius: 50%;
+      position:absolute;
+    }
+    #box2{
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+    }
+    #box3{
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+
+    }
+    #box4{
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      position: absolute;
+      bottom:0;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">
+    <!-- in here box2 have bubble and it does not stop propagation, so even if box1 work into the 
+     box2 region, it will also occur the event at the document -->
+    
+  </div>
+  <div id="box2"></div>
+  <div class="box3">
+    <div class="box4"></div>
+  </div>
+</body>
+<script>
+  /* 
+  The bubble of event have nothing to do with the style and structure of elements
+   */
+  const box1 = document.getElementById('box1')
+  const box2 = document.getElementById('box2')
+
+   document.addEventListener('mousemove', (event)=>{
+    console.log(1)
+    box1.style.top = event.y +'px'
+    box1.style.left = event.x +'px'
+    // console.log(1)
+  })
+
+
+
+  box2.addEventListener('mousemove', event=>{
+    event.stopPropagation()
+  })
+</script>
+</html>

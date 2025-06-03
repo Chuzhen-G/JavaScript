@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width: 300px;
+      height: 300px;
+      border: 1px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1"></div>
+</body>
+<script>
+  const box1 = document.getElementById('box1')
+
+  /* 
+    event
+    -event object
+    -event object is an object create when the event is occur in browser
+      This object encapsulation all the information about this event
+    -Through event object we can get many detail information about the event
+      Such as:the location of mouse, key of keyboards...
+    -When browser create event object, it will transform the event object as the parameter of responsd function
+      So we can in the call back function of event to define a parameter to receive event object
+  */
+  box1.addEventListener('mousemove', (event)=>{
+    console.log(event.clientX,event.y)
+  })
+</script>
+</html>

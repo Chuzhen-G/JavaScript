@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <button id="btn"> Click me</button>
+    <span class="s1">s</span><span class="s1">s</span><span class="s1">s</span><span class="s1">s</span><span class="s1">s</span>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <div>div</div>
+    <form action="#">
+      <input type="text" name="username">
+      <input type="radio" name="gender" value="male">male
+      <input type="radio" name="gender" female="female">female
+    </form>
+    <script>
+      /* 
+        Element node object
+          -In web page, every tags are element Node
+          -How to get element Node object
+            1.Through document object to get element Node
+            2.Through document object to create element Node
+          -Through document to get exist element Node
+            document.getElementById()
+                -Acccording to id to get element node object
+            document.getElementByClassName()
+                -According to te class attribute of element to get a group elements node object
+                -It will return a pseudo-array object(can't using array method)
+                -the result return by this method is a set will update by time
+              when webpage adding new elements, the set will also refresh
+            document.getElementByTagName() ("*") will get all tags
+                -According to the tag name to get a group of element node object
+                -The result it return is also a set will update by time
+                -document.getElementsByTagName("*") to get all the elements in the web page
+            document.getEleementsByName()
+                -according to name attribute to get a group of element node object
+                -Return a set will update by time
+                -usually using in the form
+            document.querySelectorAll()
+                -According to the selector to search all the elements that fit
+                -It will return a pseudo-array, but will not update by time
+            document.querySelector()
+                -According to the selector to search first element that fit
+          - Create an element Node
+            document.createElement()
+              -According to tag name to create an element node object
+
+      */
+     console.log(document.body)
+     const buttons=  document.getElementById('btn')//object
+     const spans = document.getElementsByClassName('s1')//pseudo-class
+     const divs = document.getElementsByTagName('div')//call by document method
+     const genderInput = getElementsByName('gender')
+     const div2 = document.querySelectorAll('#btn')//.s1, div using selector like css(class selector, tag selector, id selector)
+     const div = document.querySelector('div')
+     const h2 = document.createElement('h2')//wiil not insert to html web page
+     for(let i=0;i<spans.length;i++){
+      spans[i].innerText='hhh ' + i;//Object inner property
+     }
+    </script>
+</body>
+</html>

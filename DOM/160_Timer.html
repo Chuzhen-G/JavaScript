@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      /* 
+       The intrinsic of timer is to adding the function into the message queue in a specfic time
+       (In this case it add the function to the queue after 3s, but there are another function block
+       the stack for 6s, so it will execute after 6s)
+      */
+      console.time()
+      setTimeout(function(){
+        console.timeEnd()
+        console.log('timer execute~~~')
+      },3000)
+      //Make program stop by 3s
+      const begin = Date.now()
+      while(Date.now()-begin<3000){
+
+      }
+      /* 
+        setInterval() Adding function to the message queue after a certain time
+          But if the execute speed of function is very slow, then it can't ensure the interval between 
+          each executes(since other function may wait after current function, after current function complete, then directly going to next function without intervals)
+
+      */
+      console.time('interval')
+      setInterval(function(){
+        console.timeEnd('interval')
+        console.log('timer execute~~~')
+        console.time('interval')
+      },3000)
+
+      let timer = setTimeout(function fn(){
+        console.log('function execute')
+        //Adding a setTimeout after the call back function of setTimeout
+        timer(fn,3000)
+      },3000)
+      setTimeOut(()=>{
+        console.log(1111)
+      },0)
+      console.log(222222)
+    </script>
+</body>
+</html>

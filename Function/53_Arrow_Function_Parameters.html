@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const fn = (a,b) =>{
+    console.log('a =',a);
+    console.log('b =', b);
+  }
+
+  // When arrow function only have one parameter, then it can omit()
+  const fn2 = a =>{
+    console.log('a =', a);
+  }
+  fn2(123)
+  // When define the parameters, we can assign the default value
+  // The default value will be work if there is no correspond real parameters
+  const fn3 =(a = 10,b = 20,c = 30)=>{
+    console.log('a = ' ,a)
+    console.log('b = ',b)
+    console.log('c = ',c)
+  }
+  fn3(1,2,3)
+</script>
+</html>

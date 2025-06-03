@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    The return value of arrow function can directly wirte after arrow
+      if we directly set the object literals value as the return value after arrow, then there must using the () to wrap the object literals value
+  */
+  const sum = (a,b)=>a+b
+
+  const fn =()=>({name:'wukong'})
+  let result = sum(123,456)
+  console.log(result)
+</script>
+</html>

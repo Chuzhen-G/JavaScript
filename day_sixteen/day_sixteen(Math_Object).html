@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //property
+  console.log(Math.E);
+  console.log(Math.PI);
+
+  //method
+  console.log("minimum ",  Math.min(12,34,4594,75,-4594));
+  console.log("maximum ", Math.max(12,34,4594,75,-4594));
+  
+  console.log("Rounding ", Math.round(1234.56789));
+  // toFixed can reserve floats, but the result is string type data
+  console.log("Rounding ", parseFloat(1234.56789.toFixed(2)));//return a string with two decimal numbers
+  console.log('Rounding up', Math.ceil(1234.56789));//1235
+  console.log('Rounding up', Math.ceil(-1234.56789));//-1234
+
+  console.log('Rounding down', Math.floor(1234.56789));//1234
+  console.log('Rounding down', Math.floor(-1234.56789));//-1235
+
+  console.log('Random function: ', Math.random())
+  console.log('Random function: ', Math.random(2))
+
+
+  //output the number between [30,88]
+  console.log('Random number between [30, 88]: ', Math.ceil(Math.random()*58)+30)
+  console.log('Random number between [30, 88]: ', Math.floor(Math.random()*59)+30)
+  
+  console.log(Math.pow(2,30));
+  console.log(Math.round(Math.sin(30*Math.PI/180)*100)/100);//Here must to convert the degree to radian in the JS operation
+
+</script>
+</html>

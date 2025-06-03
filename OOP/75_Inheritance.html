@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Inheritance
+      -we can using extends keyword to archive inherits
+      -when a class inherits another class, it is same as copy the code from another class to current class(easy understand)
+      -when inherit occur, the class that been inherit are called (super class) parent class, the inherit class called child class
+      -Through using inheritance we can reduce the repeatedly code, and doing the extends without change a class
+
+      Encapsulation -- Safety
+      Polymorphism -- Flexibility
+      Inheritance -- Extends
+  
+  */
+  class Animal{
+    constructor(name){
+      this.name=name
+    }
+    sayHello(){
+      console.log('Animal sounds')
+    }
+  }
+  class Dog extends Animal{
+    sayHello(){
+      console.log('hhhhh')
+    }
+  }
+  class Cat extends Animal{
+    sayHello(){
+      console.log('mmmmm')
+    }
+  }
+  class Snake extends Animal{
+    sayHello(){
+      console.log('ssssss')
+    }
+  }
+  const dog = new Dog('wancai')
+  const cat = new Cat('tom')
+</script>
+</html>

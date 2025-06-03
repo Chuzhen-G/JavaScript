@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    -Primitive type are considered to be unchangeable type, can't be edit once create
+    -Memory will not create repeated primitive type
+
+  */
+  let a = 10 
+  let b = 10
+  a= 12 // not affect other varible
+
+  /* 
+    Objects are considered to changeable type
+    -After object create, we can arbitary to adding and delete the property in the object
+    -Note:
+      -When we doing the equal and all equal compare to object, the thing we compare is their memory location
+
+      if there have two variables point to a same object,
+        then through one varible modify the object, the other variable also will get affect
+  */
+//  let obj = {
+//   name:'wukong'
+//  }
+  let obj = Object()
+  obj.name = "Wukong"
+  console.log(obj.name)
+
+  let obj2 = Object()
+  let obj3 = Object()
+  console.log(obj2==obj3)//false
+  
+  let obj4 = obj
+
+  obj4.name = 'zhubajie'//When modify object, all variable of this object will been affect
+
+  console.log('obj', obj)
+  console.log('obj4',obj4)
+  console.log(obj === obj4);
+</script>
+</html>

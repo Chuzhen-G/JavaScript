@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  class Person{
+    name ='wukong'
+    age =18
+    construtor(){
+      this.gender='male'
+    }
+    sayHello(){
+      console.log('Hello. I am', this.name)
+    }
+  }
+  class Dog{
+
+  }
+  const p = new Person()
+  const p2 =new Person()
+  p.sayHello='hello'
+  console.log(p)
+  const d = new Dog()
+  const d2 = new Dog()
+  /* 
+    The prototype object of same type object are same 
+      it is same as saying same type object have same prototype
+
+    Role of prototype:
+      prototype is same as a public area that can be access by all the entities that in this class
+        It can store the public property(method) of an object in a class uniformly to the prototype
+        so we only need to create one property, then it can be access by all the entities at this class
+    
+    The inheritance in JS is archive by prototype(parent class entity is the prototype of child class)
+
+    Some property value in object is specialized,  like property(name, age, gender), every object should have their own value
+      But some value are same to every object, like method, (prototype allow we don't need to repeatedly to create those same value)
+  */
+  console.log(p.__proto__=== p2.__proto__)
+  class Animal{
+
+  }
+  class Cat extends Animal{
+
+  }
+  class TomCat extends Cat{
+
+  }
+  //TomCat--> cat -->Animal entity--->object-->Object prototype-->null
+  // cat -->Animal entity--->object-->Object prototype-->null
+  // p object --> object -->Object prototype -->null
+  const cat = new Cat()
+  console.log(cat.__proto__)
+</script>
+</html>

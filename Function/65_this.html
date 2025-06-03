@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    this
+      -when function is in execute, JS interpretor will transform an implicit parameter
+      -This parameter call this.
+      -this will point to an object
+        -the object point by "this" will get change by the different way of call function
+          1.using function form to call, 'this' will point to window
+          2.when using method to call, "this" will point to the object that call the method
+          ...
+  */
+  function fn(){
+    console.log(this)
+  }
+  const obj ={name:'Wukong'}
+  obj.test = fn
+  fn()
+  const obj2 = {name:'Bajie', test:fn}
+  obj2.test()//{name:'Bajie', test:fn}
+
+  const obj3={name:'shasen',sayHello:function(){
+    console.log(this.name)
+  }}
+  const obj4={name:'tanseng', sayHello:function(){
+    console.log(this.name)
+  }}
+  function fn(){
+    console.log(this.name, "Hello")
+  }
+</script>
+</html>

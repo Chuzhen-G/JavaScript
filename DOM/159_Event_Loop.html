@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">Click me</button>
+  <button id="btn02">click me</button>
+  <script>
+    /* 
+      Event loop 
+        -Every time when function is in execute, it will producec a execute environment
+        -Execute environment will be responsive to store the data produce when execute function
+        -Question:Where does the execute environment of function store at?
+          -execute environment of function is store in the call stack
+        -stack, is a data structure, characteristic last in, first out
+        -queue, is a data structure, characteristic first in, first out
+        Call stack
+          -call stack is responsive to store the execute environment of fucntion
+          -when a function is been call, its execute environment will be as a stack frame
+            -To insert in the top of the call stack, after the function is call complete it will automatically eject from the top of stack
+        Message queue
+          -Message queue reponse to store the function that will be execute
+          -when we trigger a event, its responsive function is not directly adding to the call stack
+            Because call stack may exist some code that have not execute completel yet
+          -After event trigger, JS engine will insert event responsive function to the message queue to wait
+      The message queue showing the event may will delay because other event is in execute, so other event need to wait it complete.
+      Message queue also illustrate event will store in a queue, and can be execute if the stack is empty
+    */
+   function fn(){
+    let a=10
+    let b=20
+    console.log('fn~')
+   }
+   fn()
+   const btn02 = document.getElementById('btn02')
+   const btn = document.getElementById('btn')
+   btn.addEventListener('click',()=>{
+      alert(123)
+      const begin = Date.now()
+      while(Date.now()-begin<3000){
+
+      }
+   })
+   btn02.addEventListener('click',()=>{
+    alert(2222)
+   })
+  </script>
+</body>
+</html>

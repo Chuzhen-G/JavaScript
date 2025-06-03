@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    function scope
+      -function scope is also a local scope
+      -function scope produce when call function, and it will disapper after complete call
+      -Function will produce a new function scope at each time when call function
+      -The variable we define inside function is local variable, it can only access inside function, outside can't access
+  */
+
+ function fn(){
+  let a='the variable a in fn'
+  console.log(a)
+ }
+
+ fn()
+ fn()
+ fn()
+ console.log(a)
+</script>
+</html>

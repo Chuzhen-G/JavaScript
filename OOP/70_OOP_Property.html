@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    class is the blueprint to create object, to create the object the first thing is to define class
+  */
+ class Person{
+  /* 
+    The code block of class is default in strictly mode
+      code block of class is using to set the property of object, not all the code that can write in the class
+  
+  */
+  name = 'wukong'//The entity property "name" of Person
+  age = 18//The entity property "age" of Person, the entity property can only access by entity
+
+  static test ='test static property'// The property that declare by static is the static property (class propety)
+  static hh = 'static property'//static property can only access by class(not entity)
+  constructor(n,a){
+    this.name=n;
+    this.age=a;
+  }
+ }
+ const p1 = new Person('wukong', 18);
+ p1.name ='wukong';
+ p1.age = 18
+ console.log(p1)
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width:200px;
+      height:200px;
+      padding:50px;
+      margin:50px;
+      border:10px red solid;
+      background-color: #bfa;
+      overflow:auto;
+    }
+    #box2{
+      width: 100px;
+      height: 500px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">Click me</button>
+  <hr>
+  <div id="box1" ></div>
+ <div id="box2"></div>
+</body>
+<script>
+  const btn= document.getElementById('btn')
+  const box1=document.getElementById('box1')
+  btn.onclick = function(){
+    /* 
+      element.clientHeight
+      element.clientWidth
+        -using to get the inner width and height of elements(include content and padding)
+      element.offsetHeight
+      element.offsetWidth
+        -Using to get the visible size for the element(included content and padding, border)
+      element.scrollHeight
+      element.scrollWidth
+        -Using to get the size of element scrolling region
+      element.offsetParent
+        -Get the locate parent element for current element
+        -locate parent element is the ancestor element that have open locate(position) and near most to the current element, if all elements does not open locates then return body
+      element.offsetTop
+      element.offsetLeft
+        -Get the offset value relative to its locate parent
+      element.scrollTop
+      element.scrollLeft
+        -Using to get or set the offset value of scroll
+    */
+   console.log(box1.clientWidth)
+   console.log(box1.offsetHeight)
+   console.log(box1.offsetParent)
+  }
+</script>
+</html>

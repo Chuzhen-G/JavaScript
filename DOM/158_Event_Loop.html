@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 
+      Event loop 
+        -Every time when function is in execute, it will producec a execute environment
+        -Execute environment will be responsive to store the data produce when execute function
+        -Question:Where does the execute environment of function store at?
+          -execute environment of function is store in the call stack
+        -stack, is a data structure, characteristic last in, first out
+        Call stack
+          -call stack is responsive to store the execute environment of fucntion
+          -when a function is been call, its execute environment will be as a stack frame
+            -To insert in the top of the call stack, after the function is call complete it will automatically eject from the top of stack
+    */
+   function fn(){
+    let a=10
+    let b=20
+    console.log('fn~')
+   }
+   fn()
+  </script>
+</body>
+</html>

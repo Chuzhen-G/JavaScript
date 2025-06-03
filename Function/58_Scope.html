@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Scope
+      -scope refer to the visible range of a variable
+      -scope have two kinds:
+        global scope
+          -global scope create when running web page, and disappear when close web page 
+          -All the code that directly write in the "script" tags will be locate on the global scope
+          -The variable in the global scope is global variable, and it can be access in any location 
+        local scope
+          -block scope
+            -block scope is a local scope
+            -block scope create when execute code block, after codes execute complete, it will disapper
+            -The variable declare in block scope is local variable, and it can only access in the inside of block, outside can't access
+  */
+ let a = 'variable a'
+ function fn(){
+  let b = 10
+ }
+ {
+  {
+    function fn(){
+      console.log(a)
+    }
+    console.log(a)
+  }
+  let b = 'variable b'
+ }
+ console.log(b)
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button id="btn" onmouseenter="alert('fuck u')">Click me</button> -->
+   <button id="btn">Click me</button>
+  <script>
+    /* 
+      Event
+        -event is the interact behavior between user and web page
+          such as: click button, move mouse, click twice button, click keyboard, release button...
+        -We can through bind the reponse function(call back) to event to complete the interact to users
+        -There are many way to bind with function:
+          1.directly set in the arribute of tags
+          2.Through set the call back function form to the specific attribute of elements to bind a event(a event can only bind with one function)
+          3.Through the method of element addEventListener to bind event(a event can bind multiple response function)
+    */
+   const btn = document.getElementById('btn')
+   btn.onclick = ()=>{
+    alert('fuck u')
+   }
+   btn.onclick =()=>{
+    alert('123')
+   }
+  btn.addEventListener("click", ()=>{alert('woho')})
+  btn.addEventListener("click", ()=>{alert('haaho')})
+  btn.addEventListener("click", ()=>{alert('nowoho')})
+
+  </script>
+</body>
+</html>

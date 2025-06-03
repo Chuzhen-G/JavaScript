@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    new operator is the operator need to be use when creating objects
+      -when using new to call a function, this function will be call as consturcted function
+        when using new to call function, it will occur those new things:
+        1.Create a blank, plain JavaScript object. For covenience, let's call it newInstance
+        2.Points newInstances's [prototype] to the constructor function's prototype property
+        3.Executes the constructoor function with given arguments, binding new Instance as the "this" context
+        4.If the constructor function returns a non-primitive, this return value become the result of the whole "new" expression. Otherwise, if the constructor
+        doesn't return anything or returns a primitive, newInstance is returned instead
+        Usually will not make the specify return value for the construct function
+  */
+ function MyClass(){
+  let obj = {}
+  return {name:'wukong'}
+ }
+ let mc = new MyClass()
+ class Person{
+  constructor(){
+
+  }
+ }
+ new Person()
+</script>
+</html>

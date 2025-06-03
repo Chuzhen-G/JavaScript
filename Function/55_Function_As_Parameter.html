@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function fn(a){
+    console.log("a = ",a)
+  }
+
+  /* 
+    In JS, function is also an object(first class function)
+      function can do everything that object can do
+  */
+  let obj = {name:'wukong'}
+  function fn2(){
+    console.log('I am fn2')
+  }
+  fn(fn2);
+  fn(function(){
+    console.log("I have no name")
+  })
+  fn(()=>{
+    console.log("I am u dad")
+  })
+</script>
+</html>

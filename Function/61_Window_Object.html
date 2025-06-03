@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Window object
+      -Browser provide a window object to us, that can directly access
+      -window object represent to the browser window, through this object, we can directly doing the operation to browser window
+        Besides it, window object also using to store the build-in object and the host object of browser in JS
+      -The property of window object can access by window object, but also can directly access
+      Its property(all the method and function that we don't need to declare)
+      -function can be think as the method of window object.
+  */
+
+ alert(window)
+ window.alert(123)
+ window.console.log('123')
+
+ window.a = 10 // the property we add into the window object will automatically change to the global variable
+ console.log(a)
+
+/* 
+  var is also using for declare variable, its function is same as let, but var does not have block scope
+    -The variable that declare by var in global will be save as the property of window object
+    -The function that declare by function will be save as the method of window
+    -The variable that declare by let will not store in the window, it will store in a secrect place(can't access)
+
+*/
+  var b = 20 // window.b = 20
+  function fn(){
+    alert('I am fn')
+  }
+  window.fn()
+
+  let c = 33//check let first, then window
+  window.c =44
+  console.log(window.c)
+  function fn2(){
+    var d = 10 //Although var don't have block scope, but it still have function scope
+    d=10//In local scope, if we don't use var and let to declare variable, then variable will automatically change to the property of window object, which is global variable
+  }
+  fn2()
+  console.log(d)
+</script>
+</html>

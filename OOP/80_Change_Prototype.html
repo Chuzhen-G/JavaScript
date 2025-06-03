@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Generally we don't need to change prototype object
+      Note:
+        don't using the entity of class to change the prototype
+          1. Through change one object will affect to other object
+          2. Change prototype need to create a entity at first, troublesome.
+          3. Danger
+      Besides using __proto__ to access prototype object
+        we can also using the prototype property of class to access the prototype of entity
+        when we change prototype, it is bes using class to modify
+        Benefit:
+          1.it will change the prototype for its all entities
+          2.Don't need to create entity to complete the modify to the class
+        Principle:
+          1.Try avoid to change prototype manually
+          2.Try not using entity object to change
+          3.Try to using class.prototype to edit.
+          4.Try not to set value to prototype.
+    */
+ class Person{
+    name ='wukong'
+    age =18
+    construtor(){
+      this.gender='male'
+    }
+    sayHello(){
+      console.log('Hello. I am', this.name)
+    }
+  }
+  class Dog{
+
+  }
+  const p = new Person()
+  const p2 =new Person()
+
+  // p.__proto__ = new Dog()//Set new prototype to object(Don't do it)
+  // Through object to change prototype, and adding method to prototype, after changed, other same class entities can access this methods
+  p.__proto__.run=()=>{
+    console.log('I am running')
+  }
+  p.run()
+  p2.run()
+  console.log(Person.prototype)//To access the prototype object of Person entity
+  Person.prototype.fly=()=>{
+    console.log('I am fly')
+  }
+</script>
+</html>

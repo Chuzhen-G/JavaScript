@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    There are two kind running code mode in JS:
+      -Normal Mode
+        -The default in JS is running in a normal mode
+          in normal mode. The Grammar check are not strictly
+          the principle for it: reduce error prompt
+        -This handling method will lead the poor runnning performance for the code
+
+      -Strictly Mode
+        -In strictly mode, the grammar check will become strictly
+          1.Baned grammar
+          2.Easier prompt error
+          3.Improve performance
+      -In real development, trying to using the strictly mode
+        Because it can find the hidden problem earlier
+          it can also improve the performance of code
+  */
+  'use strict' //global
+  let a = 10
+  console.log(a)
+
+  function fn(){
+    'use strict' //local
+  }
+</script>
+
+</html>

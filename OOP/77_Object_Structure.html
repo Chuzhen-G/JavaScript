@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Object actually have two region to store its property:
+      1. object itself
+        -the property we directly adding to the object
+        -The property adding to the class through format of x = y, it will also in the object self
+      2. Prototype
+        -Some of information of an object will store into other objects(prototype object)
+        -In object there will have a property using to store prototype object, this property call __proto__
+        -prototype also will response to store the property for object
+          when we access the property of object, we will first access object
+          if not found property in the object, then we will go find it in the prototype of object
+        -The scenario will adding to prototype object:
+          1.In class using xxx(){} to adding methods, in the prototype
+          2.Initiative to adding the property and method to the prototype
+  */
+ 
+  class Person{
+    name ='wukong'
+    age =18
+    construtor(){
+      this.gender='male'
+    }
+    sayHello(){
+      console.log('Hello. I am', this.name)
+    }
+  }
+  const p = new Person()
+  p.sayHello='hello'
+  console.log(p)
+</script>
+</html>

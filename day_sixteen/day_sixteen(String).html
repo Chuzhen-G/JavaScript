@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  console.dir(String);// using dictionary structure to output
+  let str1 = 'How are you?'
+  let str2 = new String('Hello world!')
+  console.log(str1, str2);
+  console.log(str1.length, str2.length);
+
+  console.log(str1.charAt(2));
+  console.log(str1.charCodeAt(2));
+
+  str1.concat('a','b','111');
+  console.log(str1);
+  console.log(str1.slice(2,4));//return the value between n-m [n,m), before m, ignore m.
+  console.log(str1.substring(2,4));//same as slice
+  console.log(str1.substr(2,3))//means from the index 2 to take 3 characters, which same as means start from index n to take m characters
+  console.log(str1.substr(2,111))//if the number of characters are not enough to take, it will only start from index n and take the characters to its end
+  console.log(str1.substr(2))//take all the characters after and include current index
+  console.log(str1.substr(-2));// if the parameter is negative, it means start from the back value to take characters
+
+  let str = 'How are you?';
+  console.log(str.indexOf('o')) //1      return the index of first 'o'
+  console.log(str.indexOf('idadada')) //return -1 if not found
+  console.log(str.indexOf('o',3)) //9   form specify index to start search
+
+  console.log(str.lastIndexOf('o')); //9 searching from back
+</script>
+</html>

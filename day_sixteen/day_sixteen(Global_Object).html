@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let x = 'aaa';//gloabal variable, it can using on current files
+  function fn(){
+    let y=123;//local variable, it can only using in this function
+    console.log(x);
+  }
+  //console.log(y)//error, the local variable can not be read outside function
+  let obj = {
+    name:x,
+    price:199.9
+  }
+  fn();
+  console.log(obj);
+</script>
+</html>

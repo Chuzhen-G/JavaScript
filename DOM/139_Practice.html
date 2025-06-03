@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    form{
+      width:300px;
+    }
+  </style>
+  
+</head>
+<body>
+  <form action="#">
+    <label>Please choose your hobby</label>
+    <input type="checkbox" name="hobby" value="selectAll">selectAll
+    <input type="checkbox" name="hobby" value="pingpong">pingpong
+    <input type="checkbox" name="hobby" value="baskectball">baskectball
+    <input type="checkbox" name="hobby" value="badminton">badminton
+    <input type="checkbox" name="hobby" value="football">football
+    <button id="select">selector all</button>
+    <button id="cancel">cancel</button>
+    <button id="opposite">select opposite</button>
+    <input type="submit" id="send">
+    <script>
+      const hobby = document.getElementsByName('hobby');
+      const selectAll = document.getElementById('select');
+      const cancel = document.getElementById('cancel');
+      const opposite = document.getElementById('opposite');
+      // .onchange, occur when check box get change
+      selectAll.addEventListener('click',()=>{
+        // "this" is selectAll(it only occur when in the normal function, arrow function besides)
+        for(let i=0;i<hobby.length;i++){
+           hobby[i].setAttribute("checked", "checked")
+        }
+        //check allbox =true
+      })
+    
+      cancel.addEventListener('click',()=>{
+        for(let i=0;i<hobby.length;i++){
+          hobby[i].removeAttribute("checked")
+        }
+        //check allbox = false
+      })
+      opposite.addEventListener('click',()=>{
+        for(let i=0;i<hobby.length;i++){
+          if(hobby[i].checked){
+            hobby[i].removeAttribute("checked")
+          }else{
+            hobby[i].setAttribute("checked", "checked")
+          }
+        }
+          const checkedBox = document.querySelectorAll('[name=hobby]:checked')
+        // if(hobby.length === checkedBox.length){
+              // checkallbox.checked =true
+          //}else{
+            // checkallbox.checked =false
+          //}//
+      })
+      const sendBtn = document.getElementById('send')
+      sendBtn.onclick = function(){
+        for(let i =0; i<hobby.length;i++){
+          if(hobby[i].checked){
+            alert(hobby[i].value)
+          }
+        }
+      }
+      for(let i =0; i<hobby.length;i++){
+        hobby[i].onchange = function(){
+          const checkedBox = document.querySelectorAll('[name=hobby]:checked')
+           if(hobby.length === checkedBox.length){
+              // checkallbox.checked =true
+          }else{
+            // checkallbox.checked =false
+          }
+        }
+       
+      }
+      
+    </script>
+  </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  class Person{
+    constructor(name){
+      this.name =name;
+    }
+  }
+   class Dog{
+    constructor(name){
+      this.name =name;
+    }
+  }
+  const dog = new Dog('wangcai')
+  const person = new Person('Wukong')
+  const test = new Test()
+  /* 
+    define a function, this funtion will receive a object as parameter, and it can output hello and print the name property of object 
+
+    polymorphism
+      -JS will not check the type of parameter, it means every data can using as parameter to transform
+      -If we want to call function, then we don't need specifc data, we only need object is satisfied some criteria
+      -Polymorphism only care if the parameter is having specific criteria, if the parameter have, then using it.
+      -Polymorphism makes the code being flexible
+  */
+ function sayHello(obj){
+  if(obj instanceof Person)
+    console.log("hello," + obj.name)
+ }
+ sayHello(test)
+ sayHello(person)
+ sayHello(dog)
+</script>
+</html>

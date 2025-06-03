@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn01">click me</button>
+  <ul id="list1">
+    <li id="l1">wukong</li>
+    <li id="l2">bajie</li>
+    <li id="l3">heshang</li>
+  </ul>
+  <ul id="list2">
+    <li >zhizhuj</li>
+  </ul>
+</body>
+  <script>
+    /* after click button, add id l1 element to list2 */
+    const btn01 = document.getElementById('btn01')
+    const list2 = document.getElementById('list2')
+    const l1 = document.getElementById('l1')
+    btn01.addEventListener('click',()=>{
+      const listnode = l1.cloneNode(true)//using to clone current node
+      console.log(listnode)
+      list2.appendChild(listnode)
+      /*  
+        When using cloneNode() methood to clone node, it will clone all the characteristic of node include all different kind property
+        this method will only default to copy current node, but not copy the child node of this node
+          parameter:
+            using true as the parameter, then this method will also clone the child element of this element
+      */
+      listnode.id='l3'
+    })
+    
+  </script>
+</html>

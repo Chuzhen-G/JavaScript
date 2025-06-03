@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .wrapper{
+      margin:0 auto;
+      width:100%;
+      height:100vh;
+      display: flex;    
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center; 
+      flex-wrap: wrap;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="prize">Your price will be randomly</div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </div>
+  
+</body>
+<script>
+    let prize = document.querySelector('.prize')
+    let stop = document.querySelector('#stop')
+    let start = document.querySelector('#start')
+    let p = [
+      "NEXT Time",
+      "NOTHING",
+      "WOW",
+    ];
+    let timer = null;
+    start.onclick = function(){
+      timer=setInterval(function(){//set a timer
+        for(let i=0; i<p.length;i++){
+          prize.innerHTML = p[Math.floor(Math.random()*p.length)];
+        } 
+      },200)//200 means the time
+    }
+    // ()=> is a short way of writing function
+    stop.onclick = function(){
+      // clear the timer
+      clearInterval(timer);
+    }
+
+    let obj=new Object();
+    let str = prompt('');
+    str = str.substr(1);
+    console.log(str);
+    let arr = str.split('&');
+    console.log(arr);
+    for(let i = 0; i< arr.length;i++){
+      console.log(arr[i]);
+      let newArr =arr[i].split('=');
+      console.log(newArr);
+      obj[newArr[0]] = newArr[1];
+    }
+    console.log(obj);
+  </script>
+</html>

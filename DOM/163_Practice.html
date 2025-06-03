@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    img{
+      vertical-align: top;
+      
+    }
+    ul{
+      list-style:none;
+      text-align: center;
+    }
+    .outer{
+      position:relative;
+      width:640px;
+      height:390px;
+      margin:100px auto;
+    }
+    img{
+      width:640px;
+      height:390px;
+    }
+    .img-list{
+      width:400px;
+      height:390px;
+    }
+    .img-list li{
+      position:absolute;
+      opacity:0;
+      transition:2s;
+    }
+    li.current{
+      opacity:1;
+    }
+    .prev-next a{
+      font-size:60px ;
+      color:rgb(192, 89, 89);
+      font-weight: bold;
+      text-decoration: none;
+      position:absolute;
+      height:60px;
+      top:0;
+      bottom:0;
+      margin:auto;
+      z-index:2;
+      opacity:.5;
+    }
+     .prev-next a:hover{
+      opacity:1;
+
+     }
+    #next {
+      right:0;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="img-list">
+      <ul>
+        <li class="current"><img src="../../Real_Case(Newman)/day_eleven/Images/product2.png"></img></li>
+        <li><img src="../../Real_Case(Newman)/day_eleven/Images/product3.png"></img></li>
+        <li><img src="../../Real_Case(Newman)/day_eleven/Images/product4.png"></img></li>
+        <li><img src="../../Real_Case(Newman)/day_eleven/Images/product5.png"></img></li>
+      </ul>
+
+      <div>
+        <div class="prev-next">
+          <a id='prev' href="javascript:;">&lt;</a>
+        <a id='next' href="javascript:;">&gt;</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    const timer = (function(){
+      let tim =null
+      return ()=>{
+      //make judgement to timer if is null
+      if(tim === null){
+        tim=setTimeout(function auto(){
+        changeImg(1)
+        tim = setTimeout(auto,3000);
+      },3000)
+      }else{
+        clearTimeout(tim)
+        tim=null
+      }
+      }
+
+    })
+    
+      timer()
+      const outer=document.getElementsByClassName('outer')[0]
+      outer.onmouseenter =()=>{
+        timer();
+      }
+      outer.onmouseleave = ()=>{
+        timer();
+      }
+
+
+    
+    const next=document.getElementById('next')
+    const prev=document.getElementById('prev')
+    prev.onclick = ()=>{
+      changeImg(-1);
+    }
+    next.onclick=()=>{
+      changeImg(1);
+    }
+    function changeImg(dir){
+      const current = document.querySelector('.img-list .current')
+      let next;
+      if(dir===1){
+        next = current.nextElementSibling || document.querySelector('.img-list ul').firstElementChild
+      }else{
+        next = current.previousElementSibling || document.querySelector('.img-list ul').lastElementChild
+      }
+      console.log(current,next)
+      current.classList.remove('current')
+      next.classList.add('current')
+    }
+  </script>
+</body>
+</html>

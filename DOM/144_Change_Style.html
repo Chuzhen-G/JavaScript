@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .box1{
+        width:200px;
+        height:200px;
+        background-color: #bfa !important;
+        transition:width, 2s;
+      }
+  </style>
+</head>
+<body>
+  <button id="btn">Click me</button>
+  <div class="box1"></div>
+</body>
+<script>
+  /* 
+    after click button, change the width of box1
+  */
+ const btn = document.getElementById('btn')
+ const box1 = document.querySelector('.box1')
+ btn.addEventListener('click', ()=>{
+  //change box1 style
+  //method to change style, element.style.style_name = style_value
+  //if the style include'-', then we need to use CamelCase
+  // background-color --> backgroundColor
+  box1.style.width='400px'
+  box1.style.height='400px'
+  box1.style.backgroundColor = 'yellow'
+ })
+</script>
+</html>

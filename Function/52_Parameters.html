@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    define a function that can find the sum of two number
+  */
+ function sum(a,b){
+  console.log(a+b)
+ }
+ const sum2 = ()=>{
+  console.log(1+1)
+ }
+ /* 
+  parameter
+    formal parameter
+    - when define function, we can denominate (formal) parameters
+    -In function to define (formal) parameter is same as declare a correspond variable in function but not assign value
+    real parameter
+    -when call function, we can transform real parameter through () of function
+    -real parameter will set value to the formal parameter it correspond with.
+    -parameters:
+      1.if real parameter have same number to formal parameter, it will set value for the real parameter to its correspond formal parameter
+      2.if real parameter have more number than formal parameter, then the extra real parameter will not be use
+      3.If formal parameter have more numbere than real parameter, then the extra formal parameter will be undefined
+
+    -parameter type
+      -JS will not check type of parameter, so it can using any type data as the parameter
+
+      1.declare function
+        function functionname(parameter){
+          statements...
+        }
+      2.function expression
+        const variable = function(parameter){
+        }
+      3.arrow function
+      (parameter)=>{
+        statements
+      }
+ */
+ sum(a,b)
+</script>
+</html>

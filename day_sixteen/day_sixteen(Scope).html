@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  console.log(x);// allow to access the variable although it is define at the bottom, default is undefine
+  let x= 123; //the x in here is a global variable
+  function fn1(){//the function at here is also global variable, but its parameter is local variable 
+    let y='abc'//y in here is local variable, the use range only in this function
+    console.log(x,y);
+  }
+  function fn2(){
+    console.log(x+10)
+  }
+  fn1();
+  fn2();
+  console.log(x);
+  console.log(y);//undefine, outside can not access it
+</script>
+</html>

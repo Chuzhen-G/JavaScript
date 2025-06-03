@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enumeration</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    Enumeration property, to gather all property in the object
+
+    for-in statement
+    -grammar:
+      for(let propName in object){
+        statement
+        ...
+      }
+    -for-in loop body will execute multiple time, execute time determine by property number
+      It will set attribute name to the varibale we define in each time execute
+    -Notes: not all property can be enumerate, such as the property add by symbol
+  */
+  let obj = {
+    name:'wukong',
+    age:18,
+    gender:'male',
+    address:'huaguos',
+    [Symbol()]:'test'//the property add by symbol can't be enumerate
+  }
+  for(let propName in object){
+    // propName will be string
+    console.log(propName, obj[propName]);
+  }
+</script>
+</html>

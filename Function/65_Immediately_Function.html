@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    In development, we should avoid to write the code in the global scope
+
+    so our code should be pratice write in the local scope
+
+    if we using let to declare variable, then we can using {} to doing block scope
+  */
+  {
+    let a =10
+  }
+  {
+    let a=20
+  }
+  function fn(){
+    var a=10
+  }
+  fn()
+  function fn2(){
+    var a=20
+  }
+  fn2()
+
+  // We want to create a annoymouse function and only execute once
+  /* 
+    Immediately invoked function expression(IIFE)
+      -Immediately is an annoymouse function, and only will call once
+      -We can using IIFE to create an once function scope, to avoid variable conflict with each other
+  */
+  ;(function(){
+   let a = 10;
+  }());
+  (function(){
+    let a = 30
+    console.log(222)
+  }());
+</script>
+</html>

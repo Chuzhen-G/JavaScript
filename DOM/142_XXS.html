@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //create elements
+  const tr = document.createElement('tr')
+  //create td
+  const name=Td = document.createElement('name')
+  const email=Td = document.createElement('email')
+  const salary=Td = document.createElement('salary')
+
+  //add content, the content is determined by user input
+  name.textContent = nametd//value of user name
+  email.textContent = emails
+  salary.textContent = salarys
+
+  // add three td to tr
+  tr.appendChild(nameTd)
+  tr.appendChild(emailTd)
+  tr.appendChild(salaryTd)
+  // although is says "insertAdjacent" but it actually is insert the child elements
+  tr.insertAdjacentHTML('beforeend','<td><a href=javascript;>delete</a></td>')
+  tbody.appendChild(tr)//add the tr we regulate into table cell
+
+</script>
+</html>

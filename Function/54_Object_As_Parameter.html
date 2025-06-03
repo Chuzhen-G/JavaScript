@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function fn(a){//a contains reference location
+    console.log('a = ', a)
+    console.log(a.name);
+    // change the data in the reference location
+    a = {}
+    a.name ='zhubajie'
+    console.log('zhubajie')
+  }
+  // Object can be a parameter to doing transform
+  let obj = {name:"Wukong"}
+
+  // when transform the real parameters, it will not transform varaible self, instead it transform the value store in the variable(Reference location)
+  
+  fn(obj)
+  console.log(obj.name)
+
+
+  let obj2={name:'shasen'}
+
+  //Every time when call the function, it will recreate the default value
+  function fn2(a = obj2){
+    console.log('a =', a)
+    a.name='tangseng'
+    console.log('a =', a)
+  }
+  fn2()
+  fn2()
+</script>
+</html>

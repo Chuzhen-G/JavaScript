@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // class Person{
+  //   name='wukong'//when we directly set the value for the entity property in the class, it means the property of all the object we have created are this value
+  //   age=18
+  //   gender='male'
+  //   sayHello(){
+  //     console.log(this.name);
+  //   }
+  // }
+  // const p1 =new Person()
+  // const p2 = new Person()
+  // const p3 = new Person()
+
+  // p2.name('zhubajie')
+  // console.log(p1)
+  // console.log(p2)
+  // console.log(p3)
+
+
+  class Person{
+    // we can adding a special method constructor in the class
+    // We call this Constructor function(constructor method)
+    // Constructor function will execute when we call class to create object
+    constructor(name, age, gender){
+      // we can in the constructor function to set value for the entity property
+      // In consctructor function, "this" represent the object we current created
+      this.name = name
+      this.age = age
+      this.gender = gender
+    }
+  }
+  const p1 = new Person('wukong',18, 'male')
+  const p2 = new Person('zhubajie',28,'male')
+  const p3 = new Person('shaseng',38,'male')
+
+</script>
+</html>

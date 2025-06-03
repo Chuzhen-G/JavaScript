@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer>
+    /* 
+      web page is loading from top to bottom, if we write the js code in the top of web page
+       when js code is in execute, web page have not load complete yet, so it will occur the scenario can't access DOM object
+        
+       window.onload event will execute after web page load fully
+       DOMContentLoaded event of document will execute after current document load fully
+      How to solve this problem:
+        1.write the script tag in the end of body(Most fast)
+        2.write codes in the window.onload function
+        3.write codes in the DOMContentLoaded call back function of document object(execute earlier)
+        4.write the code in the outside js file, and using defer form to import(execute time more earlier, earlier DOMContentLoaded)
+    */
+  //  window.onload = function(){
+   
+  //  }
+  //  window.addEventListener('load', ()=>{
+  //    const btn=document.getElementById('btn')
+  //     btn.onclick = ()=>{
+  //     alert(123)
+  //     }
+  //    console.log(btn)
+  //  })
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const btn = document.getElementById('btn')
+      alert(btn)
+    })
+    
+  </script>
+</head>
+<body>
+  <button id="btn">Click me</button>
+  <iframe src="https://www.lilichao.com"></iframe>
+</body>
+</html>

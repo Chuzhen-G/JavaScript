@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    The improvement of variable
+      -The variable declare by var will be declare before other code being execute
+        so we can access the variable before the variable is actually declare at the code
+    The improvement of function
+      -The function declare by function will be declare before other code being execute
+        so we can access the function before the function is actually declare at the code
+      -The variable declare by let will improve, but interpretor can't access it before set the value
+      */
+//  console.log(b)
+ let b =10
+ console.log(b)
+ fn()
+ function fn(){
+  alert('I am function')
+ }
+ fn2()
+ var fn2 = function(){
+
+ }
+  console.log(a)
+  var a =10
+  //a = 10 // window.a = 10
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // Factory Pattern:Create similar objects in batches
+  // Traditional method to create
+  let obj1 = new Object({
+    name:'Tom',
+    age:15,
+    fn:function(){
+      return this.name + this.age;
+    }
+  });
+  let obj2 = new Object({
+    name:'Mickle',
+    age:18,
+    fn:function(){
+      return this.name + this.age;
+    }
+  });
+  console.log(obj1,obj2)
+  // The defect for the traditional create similar objects: repeatedly coding
+  // Factorry Pattern to create object
+  function createObj(n, a){
+    // This currently function will not create the private variable, because we assign 
+    // it on the object.
+    let obj = new Object();
+    obj.name = n;
+    obj.age =a;
+    obj.fn = function(){
+      // This at here refer to the obj.
+      return this.name + this.age;
+    }
+    return obj;
+  }
+  let obj3 = createObj('john',18);
+  obj3.age = 19;
+  console.log(obj3.age);
+</script>
+</html>

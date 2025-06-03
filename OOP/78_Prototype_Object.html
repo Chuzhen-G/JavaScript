@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  class Person{
+    name ='wukong'
+    age =18
+    construtor(){
+      this.gender='male'
+    }
+    sayHello(){
+      console.log('Hello. I am', this.name)
+    }
+  }
+  p.sayHello='hello'
+  const name = new Person()
+  console.log(p)
+  /* 
+      To access the prototype of an object
+        object.__proto__(hidden information)
+        Object.getPrototypeOf(object)
+      The data in the prototype:
+        1. the data in the object (property, method)
+        2. constructor (the constructor function of object)
+      Note:
+        prototype object also have prototype, and it formed a prototype chain, according to the complicate to the object, the length of prototype chain will also difference 
+          the prototype chain of p object: p object -> prototype -> prototype ->null
+          the prototype chain of obj object: obj object -> prototype ->null
+        prototype chain:
+        -when reading object property, it will first search in the object self property
+          if object have, then use, if not go search in the prototype of object
+          if prototype have, then use, if not go search in the prototype of prototype...
+          until find the prototype of Object object, (the prototype of Object not have prototype)null)
+            if still not found, then return undefined
+        -scope chain, is to find varaible chain, it will return error if not found
+        -prototype chain, is to find the property chain, it will return undefined if not found
+  */
+  console.log(p.__proto__.__proto__.__proto__);
+  console.log(p.construtor)
+  const obj ={}
+  console.log(obj)
+  console.log(Object.getPrototypeOf(p)===p.__proto__)
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width: 300px;
+      height: 300px;
+      background-color: greenyellow;
+    }
+    #box2{
+      width: 250px;
+      height: 250px;
+      background-color: #ff0;
+    }
+    #box3{
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1"><div id="box2"><div id="box3"></div>
+
+  </div></div>
+    <a id="chao" href="#"></a>
+</body>
+<script>
+  /* 
+    In DOM there exist many different type event object
+      -All the event object have a common ancestor, Event
+      -The bubble of event
+            -event.target  The object who trigger the event
+            -event.currentTarget  The object who bind with the event(similar to this)
+            -event.stopPropagation()  stop event propagation
+            -event.preventDefault()  cancel the default behavior
+
+
+        -The bubble of event means the up transform for the event
+        -This means if an event is occur in one elements, then the same events in its ancestors will also occur
+        (In this case, click box2 will also occur the event at the box1, and it is the trigger)
+        (But also, if we don't put the event at the box2, the event at the box1 will also occur,
+        which means even if we don't have event at box2, when we click box2, it will occur the event at the box1)
+        -The exist of bubble simplify the writing of code, but in some scenario we don't want bubble exist
+          -When don't want event bubble, we can using event object to cancel bubble
+  */
+  const box1 = document.getElementById('box1')
+  const box2 = document.getElementById('box2')
+  const box3 = document.getElementById('box3')
+  const chao = document.getElementById('chao')
+  chao.addEventListener('click', (event)=>{
+    alert('clicked~~~')
+    event.preventDefault()//Cancel the default behavior for the tags
+  })
+
+  box1.addEventListener('click', event =>{
+    /* 
+      In the event responsd function:
+        event.target refer to the object who trigger this event
+        "this" is the object that bind to this event
+    */
+    console.log(event.target)//find the trigger for who occur this event
+    console.log(event.currentTarget)// return the current trigger for who have and occur this event(same as this)
+  })
+
+  box2.addEventListener('click', function(event){
+    event.stopPropagation()
+    alert('I am box2')
+  })
+  box3.addEventListener('click', event=>{
+    // Using to cancel the event propagation
+    event.stopPropagation()
+    alert('I am box3')
+  })
+</script>
+</html>

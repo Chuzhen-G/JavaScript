@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Property name
+      -Generally property name is a string, so property name can be any value, no special requirement
+        But if your property name is too special, then it can't directly use, it need set by []
+        But recommend the property name are also follow by identifier naming rule.
+
+
+      -Also can using symbol as property name
+        when get those kind propoerty, we must using symbol
+        The property adding by symbol, usually are the property that don't want to be access by outside
+      -when using [] to doing operation to property, we can using variable
+      obj['property name'] === obj.property name
+      obj[Symbol()] and obj[String()]
+      if obj contain string variable, then it does not need other string
+
+      property value 
+        -can be any kind of value
+        -also can be a object
+      using typeof to check an object, it will return object
+  */
+  let obj =Object()
+  obj.name = 'wukong'
+  obj.if='jj' //not recommand
+  obj.let ='ddd'//not recommand
+  obj['1111111111']='aa'//not recommand
+
+  let mySymbol = Symbol()
+
+  let newSymbol = Symbol()
+  //using symbol as property name
+  obj[mySymbol] = "The property adding by symbol"
+  console.log(obj)
+
+  let str ='address';
+  obj[str] = 'huoguos' // same as obj.address
+  obj.age = 18//using .format to adding property can't adding the variable
+  obj['gender']="male"
+  obj['a'] = 'a'
+  obj['b'] = 199
+  obj['f'] = Object()
+  obj.f.age= 28
+  console.log(obj);
+  console.log(typeof obj)
+  //in operator
+  //Using to check if object contain a specific property
+  console.log("name" in obj);//if object contain name property return true
+</script>
+</html>

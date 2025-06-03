@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Object-Orient Program(OOP)
+      1.What does the program use for?
+        -program is just abstract of real world(Photo is the abstract of person)
+      2.What is Object use for?
+        -Object is a thing that abstract to the program
+        -In program world, everything are object
+      3.Object-Orient Program
+        -Object-Orient program refer to all the operation in the program are complete through object
+        -Find the object before do anything, then using object to doing any operation
+  */
+ /* 
+  -A thing is usually made by two part: data and function
+  -An object is made by two parts: property and methods
+  -The data in thing go to the object is property
+  -The function in thing go to the object is method
+
+  -data:
+    name
+    age
+    height
+    weight
+  
+  -function:
+    sleep
+    eat
+ */
+const five={
+  //adding property
+  name:'wanglaowu',
+  age:48,
+  height:180,
+  weight:100,
+  
+  //method
+  sleep(){
+    console.log(this.name+'sleep')
+  },
+  eat(){
+    console.log(this.name+'eat')
+  }
+}
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    data type:
+      primitive type
+        1.Number
+        2.BigInt
+        3.String
+        4.Boolean
+        5.Null
+        6.Undefined
+        7.Symbol
+      object
+        -object is a composite data in JS
+          it is same as a container that can store different kind of data
+      primitive type can only using to represent easy type data, 
+      but it is not conveninent to represent complicate data
+  */
+
+  let name = 'wukong'
+  let age = 18
+  let gender = 'male'
+
+  //Create object
+  let obj = new Object();
+  /* 
+    Object can store multiple kind of data
+      the data object stored are called property
+    Adding property to object:
+      object.property name = property value
+    read the property in object:
+      object.property name
+      -if it read the property that object does not contain
+        it will return undefined
+  */
+ obj.name = 'wukong'
+ obj.age = 18
+ obj.gender = 'male'
+ //Change property
+ obj.name = 'Tom sun'
+ //Delete property
+ delete obj.name;
+  console.log(obj);
+</script>
+</html>

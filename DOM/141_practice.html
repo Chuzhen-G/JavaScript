@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="#"></a>
+</body>
+<script>
+  const link = document.getElementsByTagName('a')
+  link.onclick = function(){
+    // event can delete the default bahavior to stop link jumping
+    // using return false to delete the default behavior, but only work on xxx.xxx = function(){}this type link event
+    return false;
+  }
+  link.addEventListener('click',()=>{
+    return false;
+    // can't delete default behavior
+    // this at here refer to the a
+    // gather the name want delete
+    tr.getFirstChildElement.textContent
+    tr = link.parentElement.parentElement
+    const empName = tr.getElementsByTagName('td')[0].textContent
+    cofirm(`do u want to delete`) && link.remove()
+  })
+  // easy be attack by xxs
+  // tr.insertAdjacentHTML{
+  //   'before',``
+  // }
+  // if the hyperlink is new add, then it will not link with the responsive function we set beforee
+  // solution: adding resposnive function agian to hyperlink
+</script>
+</html>

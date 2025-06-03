@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <button id="btn">Clck me</button>
+  <ul id="list">
+    <li><a href="javascript:;">link1</a></li>
+    <li><a href="javascript:;">link2</a></li>
+    <li><a href="javascript:;">link3</a></li>
+    <li><a href="javascript:;">link4</a></li>
+  </ul>
+  <script>
+    /* 
+      Bind the event to the document, then because of the bubble of event, so when click hyperlink, it will
+      mkae the click event trigger at the document, then once bind it, all the hyperlink will have those event
+
+      Delegation is to bind the event that originally need to bind with multiple elements to just one big frame element(document(common ancestors)),
+      so it can reduce the complicate of code and improve performance
+    
+    */
+    // const links = document.querySelectorAll('ul a')
+    const list = document.getElementById('list')
+    const btn = document.getElementById('btn')
+    const links = list.getElementsByTagName('a')
+    
+    document.addEventListener('click',event=>{
+      if([...links].includes(event.target)){
+        alert(event.target.textContent)
+      }
+    })
+    
+    btn.addEventListener('click', event=>{
+      const a =document.createElement('a')
+      a.href="javascript:;"
+      a.textContent=`link${links.length+1}`
+      const li = document.createElement('li')
+      li.appendChild(a)
+      list.appendChild(li)
+    })
+   
+
+  </script>
+</body>
+</html>

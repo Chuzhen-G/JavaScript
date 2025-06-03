@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Arrow Function: 
+        (parameter )=> return value
+        eg:
+          no parameter arrow function: ()=> return value
+          a parameter: a=>return value
+          multiple parameter: (a,b) =>return value
+
+          only one statement function: ()=>return value
+          only return one object function: ()=>({....})
+          The function have multiple statements: ()=>{
+            ....
+            return value
+          }
+      Arrow function don't have its own this, its this is determine by its outside scope
+        The this of arrow function is not relate to its call method
+        this are determine how the function is call, if it is a method call(variable before methtod name), this will be refer this object
+        But this will not apply to arrow function.
+  */
+
+  function fn(){
+    console.log('fn-->', this)
+  }
+  const fn2 = ()=>{
+    console.log('fn2-->',this) // always window
+  }
+  //fn()//window
+  //fn2()//window
+  const obj={
+    name:"Wukong",
+    fn,//Can omit the function name, if we assign same function name
+    fn2,
+    sayHello(){
+      console.log(this.name)
+      function t(){
+        console.log('t-->',this)
+      }
+      t();
+      const t2 =()=>{
+        console.log('t2-->', this)
+      }
+      t2();
+    }
+  }
+  obj.fn()//object
+  obj.fn2()//window
+  obj.sayHello();
+</script>
+</html>

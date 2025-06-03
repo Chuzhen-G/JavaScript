@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function sum(a,b){
+   return(a+b)
+  }
+  
+
+  function fn(){
+    /* 
+      In function, we can using return keyword to denominate the return value of function
+        return value is the function execute result, after call function, return value will be result to return
+
+      In JS, every value can be the return value to use (include object and function)
+        if there is no value behind return, it is same as return undefined
+        if there do not write return, then the return value of function is still undefined
+
+      After return, function will immediately end
+      */
+  //  return {name:'wukong'}
+  return ()=>alert(123)
+  alert(123)
+  return
+  }
+  let result =sum(123,456)
+  result = sum(10,result)
+  console.log("result =", result);
+</script>
+</html>

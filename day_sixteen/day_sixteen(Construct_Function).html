@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let x = 100;
+  let y = 'abc';
+  console.log(typeof(x), typeof(y));
+
+  let obj5={gname:'xxxx', price:12.9}
+  let arr=[1,2,3];
+  let fn=new Function('console.log(1111)');
+  // typeof is mainly to get the data type, but ususally is for the basic data type, the reference type are always return object
+  // instanceof: Using to test which class that the reference object is belong to
+  console.log(obj5 instanceof Object, arr instanceof Object);
+  console.log(typeof(obj5), typeof(arr), typeof(fn))
+  // All kind of reference type are the entities that belong to Object
+  // Consturct function to create object
+  function Person(name,age=18){//The first letter must be uppercase in construct function name(Here is not only to create a function, it actually create a "class")
+    this.name = name; //this in here is not refer to the person, but the object after Instantiation(实例化)
+    this.age = age;
+    this.fn = function(){
+      return this.name +this.age;
+    }
+  }
+  // Instantiation object
+  let obj7= new Person('wangwu');
+  let obj8= new Person('wangliu',30);
+  console.log(obj7.name);//When doing the instantiation, "this" will be using to point to the object that is in the instantiation
+  console.log(obj7.age);//In here this point to obj8;
+  console.log(obj7.fn());
+
+  console.log(obj7 instanceof Object)//true
+  console.log(obj7 instanceof Person);//true
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Object-orient characteristic:
+      Encapsulation
+      Inheritance
+      Polymorphism
+    1.Encapsulation
+      -Object is a container that using to store different kind property
+      -Object is not only responsive to store property, it also need to responsive for the safety of data
+      -The property we directly adding to the object are not safety, because they can be change arbitray
+      -How to ensure the safety of data:
+        1.specialize data
+          -to specialize the data we want to protect, and only can using inside at the class
+        2.provide setter and getter method to open access for the property
+          -Specialize property, and it can be benefit when using getter and setter method
+          -1.can control the rights of read and write to the property
+          -2.can doing the verification to the data
+      -Encapsulation is mainly using to ensure the safety for the data
+      -The method to archive encapsulation
+        1.specialized property adding #
+        2.using getter and setter method to control property
+          get property_name(){
+            return this.#property
+          }
+          set property_name(parameter){
+            this.#property_name=parameter
+          }
+  */
+
+  class Person{
+    #address = 'huoguoshang'//entity property using # at the beginning will change it to the specialize property,specialize property can only access by class inside
+    //specialize property need to declare at first before it assign value
+    #age
+    #name 
+    #gender
+    constructor(name, age, gender){
+      this.#name= name
+      this.#age=age
+      this.#gender=gender
+    }
+      sayHello(){
+        console.log(this.name + this.#address);
+      }
+      //getter method, using to read property
+      getName(){
+        return this.#name;
+      }
+      //setter method, usiing to set property
+      setName(name){
+        this.#name = name;
+      }
+      getAge(){
+        return this.#age;
+      }
+      setAge(age){
+        if(age>=0){
+          this.#age=age;
+        }
+      }
+      get gender(){//easy way of writing(allow object still using . to get access)
+        return this.#gender
+      }
+      set gender(gender){
+        this.#gender=gender
+      }
+  }
+  const p1 = new Person('wukong', 18,'male')
+  // p1.age = 11
+  p1.getName();
+  p1.setName('zhubajie');
+  console.log(p1.gender);
+  console.log(p1)
+</script>
+</html>

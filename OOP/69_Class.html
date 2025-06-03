@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* 
+    Using Object to creating object problem:
+      1.Can't identify different kind object
+      2.not convenient to create object bitch
+
+    in JS we can using class to solve this problem:
+      1.class is the blueprint for the object, we can define the property and the method of object directly in the class
+      after define it, we can through class to create object
+      2.The object created by same class, we call it as same class object
+        we can use instanceOf to check if an object is created by a class
+        if an object is create by a class, then we call this object is the entity of this class
+
+      Grammar:
+        class name{}//CamelCase naming
+        const classname = class{}
+      Using class to create object
+          new class()
+  */
+//  const Person = class{}
+  // Person class is to using for create the object for person
+ class Person{
+
+ }
+  // Dog class is to using for create the object for dog
+ class Dog{
+
+ }
+
+ const p1 = new Person() // Counstruct function to create object
+ const p2 = new Person()
+ 
+ const d1 = new Dog()
+ const d2 = new Dog()
+ console.log(p1 instanceof Person);//true
+ console.log(d1 instanceof Person);//false
+
+  const five={
+  //adding property
+  name:'wanglaowu',
+  age:48,
+  height:180,
+  weight:100,
+  //method
+  sleep(){
+    console.log(this.name+'sleep')
+  },
+  eat(){
+    console.log(this.name+'eat')
+  }
+}
+
+  const yellow = {
+    name:'dahuang',
+    age:3,
+    sleep(){
+      console.log(this.name+'sleep')
+    },
+    eat(){
+      console.log(this.name+'eat')
+    }
+  }
+  console.log(five)
+  console.log(yellow)
+</script>
+</html>

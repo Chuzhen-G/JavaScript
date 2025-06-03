@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn01">button</button>
+  <button id="btn02">button</button>
+  <ul id="list">
+    <li id="swk">wukong</li>
+    <li id="zbj">bajie</li>
+    <li id="shs">shaseng</li>
+  </ul>
+  <script>
+    // url
+    const list = document.getElementById('list')
+    const btn = document.getElementById('btn01')
+    btn01.onclick = function(){
+      const li =document.createElement('li')
+      li.textContent='tanseng'
+      li.id='tanseng'
+      // appendChild() using to adding child node to another node
+      // list.appendChild(li)
+      // insertAdjacentElement() can adding elements to arbitary location to a element
+      // two parameter:1. the adding location 2. the elements want to add
+      // beforeend, end of tags; afterbegin, begin of tags
+      // beforebegin, insert front of tags; afterend, insert after of tags
+      // list.insertAdjacentElement('beforend',li)
+      list.insertAdjacentHTML('beforeend','<li id="bgj">baigujing</li>')
+    }
+    const btn02 = document.getElementById("btn02")
+    btn02.onclick = function(){
+        const li = document.createElement('li')
+        li.textContent = 'zhihzuj'
+        li.id='zzj'
+
+        //get swk
+        const swk = document.getElementById("swk")
+        // replaceWith() using an element to subsituite current elements
+        swk.replacewith(li)
+        //using remove to delete current elements
+        swk.remove()
+    }
+  </script>
+</body>
+</html>

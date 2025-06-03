@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    Way of define function:
+      1.declare function
+        function functionname(){
+          statements...
+        }
+      2.function expression
+        const variable = function(){
+        }
+      3.arrow function
+      ()=>{
+      statements
+      }
+  */
+ function fn(){
+  console.log("declare function")
+ }
+ const fn2 = function(){
+  console.log('function expression')
+ }
+ const fn3 = () => {
+  console.log("arrow function")
+ }
+ console.log(typeof fn)
+ console.log(typeof fn2)
+ console.log(typeof fn3)
+</script>
+</html>

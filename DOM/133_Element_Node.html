@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box1">box1 <span class="s1">
+    span
+  </span>
+  <span class="s1">
+    span
+  </span></div>
+  <span class="s1">
+    
+  </span>
+  <script>
+    /* 
+      prototype of Div Element
+        HTMLDivElement -> HTMLElement ->Element -> Node
+
+      Through element node object to get other object
+        element.childNodes, get the child element node of current element(count content node(space element))
+        element.children, get the child element of current element
+        element.firstElementChild, get the first child element of current element
+        element.lastElementChild, get the last child element of current element
+        element.nextElementSibling, get next sibling element of current element
+        element.previousElementSibling, get previous sibling element of current element
+        element.parentNode, get parent node of current element
+        element.tagName, get the tag name of current element
+    */
+   
+    const box1=document.querySelector('#box1')
+    const spans = box1.getElementsByTagName('span')
+    const spans2 = box1.getElementsByClassName('s1')
+    const cns = box1.childNodes//property
+    const children = box1.children//property
+    console.log(box1.firstChild)//property
+    console.log(box1)
+  </script>
+</body>
+</html>

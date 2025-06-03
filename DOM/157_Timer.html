@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="num"></h1>
+  <script>
+    /* 
+      Through using timer, we can let code execute after specific time
+        -Two way to set timer:
+          setTimeout()(Only execute once)
+            -parameter:
+              1.call back function(the code we want to execute)
+              2.Time interval(after how much time to execute)(millisecond)
+            -clear timer(disabled the code in the setTimeout()(Those code will never be execute, because timer is been clear))
+              clearTimeout()
+                -parameter
+                  1. timer name set by (setTimeout())
+          setInterval()(Execute multiple time, the interval depend for second parameter)
+            -parameter:
+              1.call back function(the code we want to execute)
+              2.Time interval(after how much time to execute once)(millisecond)
+            -clear timer(disabled the code in the setInterval()(Those code will never be execute, because timer is been clear))
+              clearInterval()
+              -parameter
+                  1. timer name set by (setInterval())
+    */
+    const numH1 = document.getElementById('num')
+    let num = 0
+    let timer = setTimeout(()=>{
+      alert('I am the code in the timer')
+    },3000)//after 3000ms to execute code
+    clearTimeout(timer)
+    timer = setInterval(()=>{
+      num++;
+      numH1.textContent=num
+      if(num>5){
+        clearInterval(timer)
+      }
+    },1000)
+    
+  </script>
+</body>
+</html>
